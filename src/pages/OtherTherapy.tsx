@@ -1,46 +1,34 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Pill, FileText, Download } from "lucide-react";
+import { Pill, Download } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const OtherTherapy = () => {
   const products = [
     {
-      name: "Gastro-Protective Agent",
-      description: "Proton pump inhibitor for gastric acid suppression",
-      indication: "GERD, Peptic Ulcers",
-      strength: "20mg/40mg",
-      form: "Enteric Coated Capsule"
+      name: "ACMOXIA 60",
+      image: "https://i.ibb.co/cmBHxp7/ACMOXIA-60.png"
     },
     {
-      name: "Antibiotic Combination",
-      description: "Broad-spectrum antibiotic with beta-lactamase inhibitor",
-      indication: "Bacterial Infections",
-      strength: "625mg/1000mg",
-      form: "Film Coated Tablet"
+      name: "ACMOXIA 90",
+      image: "https://i.ibb.co/SDKTPkVG/ACMOXIA-90.png"
     },
     {
-      name: "Pain Relief Formula",
-      description: "Non-steroidal anti-inflammatory drug for pain management",
-      indication: "Pain, Inflammation",
-      strength: "100mg/200mg",
-      form: "Sustained Release Tablet"
+      name: "ACMOXIA MR",
+      image: "https://i.ibb.co/hRzfzZg4/ACMOXIA-MR.png"
     },
     {
-      name: "Vitamin D3 + K2",
-      description: "Synergistic combination for bone health and calcium metabolism",
-      indication: "Vitamin Deficiency, Osteoporosis",
-      strength: "1000IU + 45mcg",
-      form: "Soft Gelatin Capsule"
+      name: "ACORISE D3",
+      image: "https://i.ibb.co/b5mKpx0m/ACORISE-D3.png"
     },
     {
-      name: "Anti-Inflammatory",
-      description: "Selective COX-2 inhibitor for targeted inflammation control",
-      indication: "Arthritis, Joint Pain",
-      strength: "100mg/200mg",
-      form: "Hard Gelatin Capsule"
+      name: "AFFOCAL CT",
+      image: "https://i.ibb.co/gbpw1sns/AFFOCAL-CT.png"
+    },
+    {
+      name: "AFFOCAL XT",
+      image: "https://i.ibb.co/qLSRZ5rG/AFFOCAL-XT.png"
     }
   ];
 
@@ -68,8 +56,8 @@ const OtherTherapy = () => {
           
           <div className="grid md:grid-cols-3 gap-6 mt-12">
             <div className="text-center">
-              <div className="text-3xl font-bold text-primary mb-2">5+</div>
-              <div className="text-gray-600">Therapeutic Areas</div>
+              <div className="text-3xl font-bold text-primary mb-2">{products.length}+</div>
+              <div className="text-gray-600">Product Variants</div>
             </div>
             <div className="text-center">
               <div className="text-3xl font-bold text-primary mb-2">Multi</div>
@@ -86,48 +74,24 @@ const OtherTherapy = () => {
       {/* Products Grid */}
       <section className="section-padding">
         <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-6">
             {products.map((product, index) => (
-              <Card key={index} className="card-pharmaceutical group">
-                <CardHeader>
-                  <div className="flex items-start justify-between mb-4">
-                    <div className="bg-purple-50 p-3 rounded-lg">
-                      <Pill className="h-6 w-6 text-purple-500" />
-                    </div>
-                    <Button variant="ghost" size="sm" className="opacity-0 group-hover:opacity-100 transition-opacity">
-                      <FileText className="h-4 w-4" />
-                    </Button>
-                  </div>
-                  <CardTitle className="text-xl mb-2">{product.name}</CardTitle>
-                  <CardDescription className="text-gray-600">
-                    {product.description}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-3">
-                    <div className="flex justify-between">
-                      <span className="text-sm text-gray-500">Indication:</span>
-                      <span className="text-sm font-medium">{product.indication}</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-sm text-gray-500">Strength:</span>
-                      <span className="text-sm font-medium">{product.strength}</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-sm text-gray-500">Form:</span>
-                      <span className="text-sm font-medium">{product.form}</span>
-                    </div>
-                  </div>
-                  <div className="flex gap-2 mt-6">
-                    <Button size="sm" className="flex-1">
-                      Request Quote
-                    </Button>
-                    <Button variant="outline" size="sm">
-                      <Download className="h-4 w-4" />
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card>
+              <div key={index} className="aspect-square bg-white rounded-lg border overflow-hidden hover:shadow-lg transition-shadow flex flex-col">
+                {/* Image Area - 60% */}
+                <div className="flex-[3] flex items-center justify-center p-2">
+                  <img 
+                    src={product.image} 
+                    alt={product.name}
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+                {/* Text Area - 40% */}
+                <div className="flex-[2] flex items-center justify-center px-3 py-4 bg-gray-100 border-t border-gray-200">
+                  <h3 className="text-base font-bold text-center text-red-600 leading-tight uppercase">
+                    {product.name}
+                  </h3>
+                </div>
+              </div>
             ))}
           </div>
         </div>

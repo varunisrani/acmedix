@@ -1,46 +1,134 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Beaker, Pill, FileText, Download } from "lucide-react";
+import { Beaker, Download } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const CardiacCare = () => {
   const products = [
     {
-      name: "ACE Inhibitor 10mg",
-      description: "Angiotensin-converting enzyme inhibitor for hypertension",
-      indication: "Hypertension, Heart Failure",
-      strength: "10mg",
-      form: "Film Coated Tablet"
+      name: "ACBISO 5",
+      image: "https://i.ibb.co/gbYJ5YCv/ACBISO-5.png"
     },
     {
-      name: "Beta Blocker 25mg",
-      description: "Selective beta-1 adrenergic receptor blocker",
-      indication: "Hypertension, Angina",
-      strength: "25mg/50mg",
-      form: "Extended Release Tablet"
+      name: "ACMEROSE 10",
+      image: "https://i.ibb.co/MkjVhLj9/ACMEROSE-10.png"
     },
     {
-      name: "Calcium Channel Blocker",
-      description: "Long-acting dihydropyridine calcium channel blocker",
-      indication: "Hypertension, Angina",
-      strength: "5mg/10mg",
-      form: "Sustained Release Tablet"
+      name: "ACMEROSE 20",
+      image: "https://i.ibb.co/nqYsJzNh/ACMEROSE-20.png"
     },
     {
-      name: "Statin + Ezetimibe",
-      description: "Fixed-dose combination for cholesterol management",
-      indication: "Hypercholesterolemia",
-      strength: "10mg + 10mg",
-      form: "Fixed Dose Combination"
+      name: "ACMEROSE A 10",
+      image: "https://i.ibb.co/ks2bNfNk/ACMEROSE-A-10.png"
     },
     {
-      name: "Aspirin + Clopidogrel",
-      description: "Dual antiplatelet therapy for cardiovascular protection",
-      indication: "Secondary CVD Prevention",
-      strength: "75mg + 75mg",
-      form: "Enteric Coated Tablet"
+      name: "ACMEROSE CV 10",
+      image: "https://i.ibb.co/rNhF09C/ACMEROSE-CV-10.png"
+    },
+    {
+      name: "ACMEROSE EZ",
+      image: "https://i.ibb.co/PzTJ6h1B/ACMEROSE-EZ.png"
+    },
+    {
+      name: "ACMEROSE F",
+      image: "https://i.ibb.co/Pv25B9Fv/ACMEROSE-F.png"
+    },
+    {
+      name: "ACMEROSE GOLD 10",
+      image: "https://i.ibb.co/LX5PRNb3/ACMEROSE-GOLD-10.png"
+    },
+    {
+      name: "ACMEROSE GOLD 20",
+      image: "https://i.ibb.co/tPFRTbMd/ACMEROSE-GOLD-20.png"
+    },
+    {
+      name: "ACMETEL 40",
+      image: "https://i.ibb.co/qMgSNQYR/ACMETEL-40.png"
+    },
+    {
+      name: "ACMETEL AM",
+      image: "https://i.ibb.co/Z1fCnYSm/ACMETEL-AM.png"
+    },
+    {
+      name: "ACMETEL AMH",
+      image: "https://i.ibb.co/NgbGHGQw/ACMETEL-AMH.png"
+    },
+    {
+      name: "ACMETEL BS",
+      image: "https://i.ibb.co/0yMX4QjD/ACMETEL-BS.png"
+    },
+    {
+      name: "ACMETEL CH",
+      image: "https://i.ibb.co/RG53LXf0/ACMETEL-CH.png"
+    },
+    {
+      name: "ACMETEL H",
+      image: "https://i.ibb.co/q3byz6wn/ACMETEL-H.png"
+    },
+    {
+      name: "ACMETEL LN",
+      image: "https://i.ibb.co/qz07Gcz/ACMETEL-LN.png"
+    },
+    {
+      name: "ACMETEL MT 25",
+      image: "https://i.ibb.co/zTrKvrCb/ACMETEL-MT-25.png"
+    },
+    {
+      name: "ACMETEL MT 50",
+      image: "https://i.ibb.co/fGztvSCY/ACMETEL-MT-50.png"
+    },
+    {
+      name: "ACMETO AM",
+      image: "https://i.ibb.co/PsWbyszL/ACMETO-AM.png"
+    },
+    {
+      name: "ACMETO XL 25",
+      image: "https://i.ibb.co/35hCcwGc/ACMETO-XL-25.png"
+    },
+    {
+      name: "ACMETO XL 50",
+      image: "https://i.ibb.co/xSYvn27h/ACMETO-XL-50.png"
+    },
+    {
+      name: "ACOTIDE 10",
+      image: "https://i.ibb.co/rRfn9QDh/ACOTIDE-10.png"
+    },
+    {
+      name: "AFFOLMY 20",
+      image: "https://i.ibb.co/jkVBdWzj/AFFOLMY-20.png"
+    },
+    {
+      name: "AFFOLMY 40",
+      image: "https://i.ibb.co/3mrWQXww/AFFOLMY-40.png"
+    },
+    {
+      name: "CILAFIRST 10",
+      image: "https://i.ibb.co/yFTfhPS5/CILAFIRST-10.png"
+    },
+    {
+      name: "CILAFIRST 20",
+      image: "https://i.ibb.co/jZ9gQkC0/CILAFIRST-20.png"
+    },
+    {
+      name: "CILAFIRST M 10/25",
+      image: "https://i.ibb.co/5gVR69DX/CILAFIRST-M-10-25.png"
+    },
+    {
+      name: "CILAFIRST M 10/50",
+      image: "https://i.ibb.co/7d5vvVZ1/CILAFIRST-M-10-50.png"
+    },
+    {
+      name: "IVASAFE 5",
+      image: "https://i.ibb.co/kVsdv5cR/IVASAFE-5.png"
+    },
+    {
+      name: "SACUSAFE 50",
+      image: "https://i.ibb.co/8nYsLLg6/SACUSAFE-50.png"
+    },
+    {
+      name: "SACUSAFE 100",
+      image: "https://i.ibb.co/W48P7TcX/SACUSAFE-100.png"
     }
   ];
 
@@ -68,8 +156,8 @@ const CardiacCare = () => {
           
           <div className="grid md:grid-cols-3 gap-6 mt-12">
             <div className="text-center">
-              <div className="text-3xl font-bold text-primary mb-2">5+</div>
-              <div className="text-gray-600">Therapeutic Classes</div>
+              <div className="text-3xl font-bold text-primary mb-2">{products.length}+</div>
+              <div className="text-gray-600">Product Variants</div>
             </div>
             <div className="text-center">
               <div className="text-3xl font-bold text-primary mb-2">FDA</div>
@@ -86,48 +174,24 @@ const CardiacCare = () => {
       {/* Products Grid */}
       <section className="section-padding">
         <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-6">
             {products.map((product, index) => (
-              <Card key={index} className="card-pharmaceutical group">
-                <CardHeader>
-                  <div className="flex items-start justify-between mb-4">
-                    <div className="bg-blue-50 p-3 rounded-lg">
-                      <Pill className="h-6 w-6 text-blue-500" />
-                    </div>
-                    <Button variant="ghost" size="sm" className="opacity-0 group-hover:opacity-100 transition-opacity">
-                      <FileText className="h-4 w-4" />
-                    </Button>
-                  </div>
-                  <CardTitle className="text-xl mb-2">{product.name}</CardTitle>
-                  <CardDescription className="text-gray-600">
-                    {product.description}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-3">
-                    <div className="flex justify-between">
-                      <span className="text-sm text-gray-500">Indication:</span>
-                      <span className="text-sm font-medium">{product.indication}</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-sm text-gray-500">Strength:</span>
-                      <span className="text-sm font-medium">{product.strength}</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-sm text-gray-500">Form:</span>
-                      <span className="text-sm font-medium">{product.form}</span>
-                    </div>
-                  </div>
-                  <div className="flex gap-2 mt-6">
-                    <Button size="sm" className="flex-1">
-                      Request Quote
-                    </Button>
-                    <Button variant="outline" size="sm">
-                      <Download className="h-4 w-4" />
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card>
+              <div key={index} className="aspect-square bg-white rounded-lg border overflow-hidden hover:shadow-lg transition-shadow flex flex-col">
+                {/* Image Area - 60% */}
+                <div className="flex-[3] flex items-center justify-center p-2">
+                  <img 
+                    src={product.image} 
+                    alt={product.name}
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+                {/* Text Area - 40% */}
+                <div className="flex-[2] flex items-center justify-center px-3 py-4 bg-gray-100 border-t border-gray-200">
+                  <h3 className="text-base font-bold text-center text-red-600 leading-tight uppercase">
+                    {product.name}
+                  </h3>
+                </div>
+              </div>
             ))}
           </div>
         </div>

@@ -1,73 +1,130 @@
-# Welcome to your Lovable project
+# Acmedix Pharma Website
 
-## Project info
+A modern pharmaceutical company website built with React, TypeScript, and Tailwind CSS. The site showcases pharmaceutical products, R&D capabilities, manufacturing facilities, and corporate information.
 
-**URL**: https://lovable.dev/projects/2d242f2c-51a1-4d39-8bb7-90bc2ff111bf
+## 🚀 Features
 
-## How can I edit this code?
+- **Product Categories**: Anti-Diabetic, Cardiac Care, Neuro Care, and Other Therapy products
+- **Interactive Navigation**: Click-based product dropdown with category pages
+- **Real Product Showcase**: 46+ pharmaceutical products with actual product images
+- **Responsive Design**: Mobile-first design with modern UI components
+- **Performance Optimized**: Built with Vite for fast development and production builds
 
-There are several ways of editing your application.
+## 🛠️ Technology Stack
 
-**Use Lovable**
+- **Frontend**: React 18 with TypeScript
+- **Build Tool**: Vite 5.x
+- **Styling**: Tailwind CSS with custom pharmaceutical design system
+- **UI Components**: shadcn-ui (Radix UI primitives)
+- **Routing**: React Router DOM v6
+- **State Management**: TanStack Query for server state
+- **Icons**: Lucide React
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/2d242f2c-51a1-4d39-8bb7-90bc2ff111bf) and start prompting.
+## 📦 Installation
 
-Changes made via Lovable will be committed automatically to this repo.
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/varunisrani/acmedix.git
+   cd acmedix
+   ```
 
-**Use your preferred IDE**
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+3. **Start development server**
+   ```bash
+   npm run dev
+   ```
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+4. **Open in browser**
+   - Navigate to `http://localhost:8080`
 
-Follow these steps:
+## 🔧 Available Scripts
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+```bash
+# Development server
 npm run dev
+
+# Production build
+npm run build
+
+# Development build
+npm run build:dev
+
+# Lint code
+npm run lint
+
+# Preview production build
+npm run preview
 ```
 
-**Edit a file directly in GitHub**
+## 🏗️ Project Structure
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+```
+src/
+├── components/
+│   ├── ui/           # shadcn-ui components
+│   ├── Navigation.tsx    # Main navigation with product dropdown
+│   ├── Footer.tsx        # Site-wide footer
+│   └── [Other].tsx       # Various page components
+├── pages/            # Route components
+│   ├── AntiDiabetic.tsx  # Anti-diabetic products
+│   ├── CardiacCare.tsx   # Cardiac care products
+│   ├── NeuroCare.tsx     # Neurological products
+│   └── OtherTherapy.tsx  # Other therapeutic products
+├── hooks/            # Custom React hooks
+├── lib/              # Utilities and helpers
+└── assets/           # Static images and resources
+```
 
-**Use GitHub Codespaces**
+## 🎨 Design System
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+- **Primary Color**: Acmedix Red (`--primary: 0 74% 42%`)
+- **Components**: Pharmaceutical-themed UI with hover effects
+- **Typography**: Professional medical/pharmaceutical styling
+- **Animations**: Smooth transitions and scroll-triggered effects
 
-## What technologies are used for this project?
+## 📱 Key Pages
 
-This project is built with:
+- **Homepage** (`/`) - Company overview and flagship products
+- **About** (`/about`) - Company information and history
+- **Manufacturing** (`/manufacturing`) - Manufacturing capabilities
+- **Products** - Four category pages:
+  - `/products/anti-diabetic` - Anti-diabetic medications
+  - `/products/cardiac-care` - Cardiovascular treatments
+  - `/products/neuro-care` - Neurological medications
+  - `/products/other-therapy` - Other therapeutic solutions
+- **Export** (`/export`) - International markets and services
+- **Careers** (`/careers`) - Job opportunities
+- **Contact** (`/contact`) - Contact information and inquiry forms
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## 🚀 Deployment
 
-## How can I deploy this project?
+The project is ready for deployment on any modern hosting platform:
 
-Simply open [Lovable](https://lovable.dev/projects/2d242f2c-51a1-4d39-8bb7-90bc2ff111bf) and click on Share -> Publish.
+- **Vercel**: `npm run build` then deploy `dist` folder
+- **Netlify**: Connect GitHub repo for automatic deployments
+- **AWS S3/CloudFront**: Upload `dist` folder to S3 bucket
+- **GitHub Pages**: Use GitHub Actions for automated deployment
 
-## Can I connect a custom domain to my Lovable project?
+## 🤝 Contributing
 
-Yes, you can!
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+## 📄 License
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+This project is private and proprietary to Acmedix Pharma.
+
+## 📞 Contact
+
+For any questions or support, please contact the development team.
+
+---
+
+Built with ❤️ for Acmedix Pharma

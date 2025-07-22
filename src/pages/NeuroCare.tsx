@@ -1,46 +1,46 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Shield, Pill, FileText, Download } from "lucide-react";
+import { Shield, Download } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const NeuroCare = () => {
   const products = [
     {
-      name: "Antiepileptic 500mg",
-      description: "Broad-spectrum anticonvulsant for seizure management",
-      indication: "Epilepsy, Seizure Disorders",
-      strength: "500mg/750mg",
-      form: "Extended Release Tablet"
+      name: "ACOGAB NT",
+      image: "https://i.ibb.co/hRMBCLgn/ACOGAB-NT.png"
     },
     {
-      name: "SSRI Antidepressant",
-      description: "Selective serotonin reuptake inhibitor for mood disorders",
-      indication: "Depression, Anxiety Disorders",
-      strength: "20mg/40mg",
-      form: "Film Coated Tablet"
+      name: "ACOLEV 500",
+      image: "https://i.ibb.co/8DYsq8JY/ACOLEV-500.png"
     },
     {
-      name: "Anxiolytic 0.5mg",
-      description: "Short-acting benzodiazepine for anxiety management",
-      indication: "Anxiety, Panic Disorders",
-      strength: "0.5mg/1mg",
-      form: "Sublingual Tablet"
+      name: "ACONERV P",
+      image: "https://i.ibb.co/nN6BTHMh/ACONERV-P.png"
     },
     {
-      name: "Neuroprotective Agent",
-      description: "Advanced neuroprotective therapy for cognitive support",
-      indication: "Alzheimer's, Dementia",
-      strength: "10mg/20mg",
-      form: "Orally Disintegrating Tablet"
+      name: "ACONERV PLUS",
+      image: "https://i.ibb.co/hFLj5Wcs/ACONERV-PLUS.png"
     },
     {
-      name: "Anti-Parkinson Drug",
-      description: "Dopamine agonist for Parkinson's disease management",
-      indication: "Parkinson's Disease",
-      strength: "0.25mg/0.5mg",
-      form: "Extended Release Tablet"
+      name: "ACONERV SL",
+      image: "https://i.ibb.co/rGwLkMyV/ACONERV-SL.png"
+    },
+    {
+      name: "ACOPRAM PLUS",
+      image: "https://i.ibb.co/8nhsH9C2/ACOPRAM-PLUS.png"
+    },
+    {
+      name: "ACOPRAM",
+      image: "https://i.ibb.co/1tk4Wk9q/ACOPRAM.png"
+    },
+    {
+      name: "ACOPREG NT",
+      image: "https://i.ibb.co/35Mdqkmb/ACOPREG-NT.png"
+    },
+    {
+      name: "ACOVERT 16",
+      image: "https://i.ibb.co/RGHD9D2h/ACOVERT-16.png"
     }
   ];
 
@@ -68,8 +68,8 @@ const NeuroCare = () => {
           
           <div className="grid md:grid-cols-3 gap-6 mt-12">
             <div className="text-center">
-              <div className="text-3xl font-bold text-primary mb-2">5+</div>
-              <div className="text-gray-600">Neurological Classes</div>
+              <div className="text-3xl font-bold text-primary mb-2">{products.length}+</div>
+              <div className="text-gray-600">Product Variants</div>
             </div>
             <div className="text-center">
               <div className="text-3xl font-bold text-primary mb-2">CNS</div>
@@ -86,48 +86,24 @@ const NeuroCare = () => {
       {/* Products Grid */}
       <section className="section-padding">
         <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-6">
             {products.map((product, index) => (
-              <Card key={index} className="card-pharmaceutical group">
-                <CardHeader>
-                  <div className="flex items-start justify-between mb-4">
-                    <div className="bg-green-50 p-3 rounded-lg">
-                      <Pill className="h-6 w-6 text-green-500" />
-                    </div>
-                    <Button variant="ghost" size="sm" className="opacity-0 group-hover:opacity-100 transition-opacity">
-                      <FileText className="h-4 w-4" />
-                    </Button>
-                  </div>
-                  <CardTitle className="text-xl mb-2">{product.name}</CardTitle>
-                  <CardDescription className="text-gray-600">
-                    {product.description}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-3">
-                    <div className="flex justify-between">
-                      <span className="text-sm text-gray-500">Indication:</span>
-                      <span className="text-sm font-medium">{product.indication}</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-sm text-gray-500">Strength:</span>
-                      <span className="text-sm font-medium">{product.strength}</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-sm text-gray-500">Form:</span>
-                      <span className="text-sm font-medium">{product.form}</span>
-                    </div>
-                  </div>
-                  <div className="flex gap-2 mt-6">
-                    <Button size="sm" className="flex-1">
-                      Request Quote
-                    </Button>
-                    <Button variant="outline" size="sm">
-                      <Download className="h-4 w-4" />
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card>
+              <div key={index} className="aspect-square bg-white rounded-lg border overflow-hidden hover:shadow-lg transition-shadow flex flex-col">
+                {/* Image Area - 60% */}
+                <div className="flex-[3] flex items-center justify-center p-2">
+                  <img 
+                    src={product.image} 
+                    alt={product.name}
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+                {/* Text Area - 40% */}
+                <div className="flex-[2] flex items-center justify-center px-3 py-4 bg-gray-100 border-t border-gray-200">
+                  <h3 className="text-base font-bold text-center text-red-600 leading-tight uppercase">
+                    {product.name}
+                  </h3>
+                </div>
+              </div>
             ))}
           </div>
         </div>

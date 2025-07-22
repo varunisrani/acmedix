@@ -6,7 +6,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 Acmedix Pharma is a pharmaceutical company website built as a React SPA using modern web technologies. The site showcases the company's pharmaceutical products, R&D capabilities, manufacturing facilities, and corporate information.
 
-**Built with Lovable**: This project was created and is managed through the Lovable platform (https://lovable.dev), which provides automated Git integration for changes.
+**Independent Project**: This is a standalone React application built with modern web technologies and best practices.
 
 ## Technology Stack
 
@@ -17,7 +17,7 @@ Acmedix Pharma is a pharmaceutical company website built as a React SPA using mo
 - **Routing**: React Router DOM v6
 - **State Management**: TanStack Query for server state
 - **Icons**: Lucide React
-- **Package Manager**: Multiple lockfiles present (npm, pnpm, bun)
+- **Package Manager**: npm (primary)
 
 ## Development Commands
 
@@ -105,7 +105,6 @@ The main navigation includes a contact bar (phone, email, location) and main nav
 ## Important Notes
 
 - Vite dev server configured for host "::" (all interfaces) on port 8080
-- Component tagging enabled in development mode via `lovable-tagger`
 - Multiple package managers supported but npm is primary based on package-lock.json
 - Images use external Unsplash URLs for placeholders
-- No custom domain setup required for Lovable deployment
+- Ready for deployment on any modern hosting platform

@@ -18,6 +18,7 @@ import CardiacCare from "./pages/CardiacCare";
 import NeuroCare from "./pages/NeuroCare";
 import OtherTherapy from "./pages/OtherTherapy";
 import NotFound from "./pages/NotFound";
+import ScrollToTop from "./components/ScrollToTop";
 
 const queryClient = new QueryClient();
 
@@ -27,6 +28,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/about" element={<About />} />
