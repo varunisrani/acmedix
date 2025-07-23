@@ -54,13 +54,14 @@ const About = () => {
     <div className="min-h-screen">
       <Navigation />
       
-      {/* Hero Section with Enhanced Design */}
-      <section className="relative section-padding bg-gradient-to-br from-primary via-primary-hover to-primary text-white overflow-hidden">
-        <div className="absolute inset-0 bg-black/20"></div>
-        <div className="absolute inset-0">
-          <div className="absolute top-20 right-20 w-72 h-72 bg-white/10 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-20 left-20 w-96 h-96 bg-white/5 rounded-full blur-3xl"></div>
-        </div>
+      {/* Hero Section with Background Image */}
+      <section className="relative section-padding text-white overflow-hidden">
+        {/* Background Image */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: 'url(https://i.ibb.co/8gjs3sC0/sl-040220-29550-19.jpg)' }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-900/85 via-slate-800/75 to-slate-900/85"></div>
         
         <div className="container mx-auto relative z-10">
           <div className="max-w-4xl mx-auto text-center">

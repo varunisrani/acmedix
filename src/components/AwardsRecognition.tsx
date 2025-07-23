@@ -3,25 +3,25 @@ import { Award, Trophy, Medal, Star, Shield, Globe } from 'lucide-react';
 const AwardsRecognition = () => {
   const awards = [
     {
-      icon: Trophy,
-      title: "Best Pharma Company",
-      organization: "Healthcare Excellence Awards 2023",
-      description: "Recognized for outstanding contribution to affordable healthcare",
-      year: "2023"
+      image: "https://i.ibb.co/QvSY0rLV/award-02.png",
+      title: "Divyabhaskar Healthcare Award 2021",
+      organization: "Divyabhaskar",
+      description: "Recognised at the Best Emerging Pharma Company of the Year 2021",
+      year: "2021"
     },
     {
-      icon: Medal,
-      title: "Quality Excellence Award",
-      organization: "Pharmaceutical Society of India",
-      description: "For maintaining highest quality standards in manufacturing",
+      image: "https://i.ibb.co/Mx6Mqn8f/award-01.png",
+      title: "Six Sigma Excellence Awards 2022, New Delhi",
+      organization: "Six Sigma",
+      description: "Recognised for \"Best Initiative for Providing Economical Medicines\"",
       year: "2022"
     },
     {
-      icon: Star,
-      title: "Innovation in Medicine",
-      organization: "Global Healthcare Innovation Summit",
-      description: "Outstanding achievement in pharmaceutical research and development",
-      year: "2023"
+      image: "https://i.ibb.co/mr6yrpXr/award-03.png",
+      title: "IHW 3rd Patient First Award 2024",
+      organization: "IHW",
+      description: "Awarded- Patient Centric Pharmaceutical Company in Diabetes Care",
+      year: "2024"
     }
   ];
 
@@ -54,23 +54,39 @@ const AwardsRecognition = () => {
           {awards.map((award, index) => (
             <div 
               key={award.title}
-              className="card-pharmaceutical p-8 text-center group"
+              className="card-pharmaceutical overflow-hidden group"
               style={{ 
                 opacity: 1,
                 transform: 'translateY(0)',
                 animation: `scale-in 0.6s ease-out ${index * 0.2}s both`
               }}
             >
-              <div className="inline-flex p-4 bg-primary-light rounded-full mb-6 group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
-                <award.icon className="h-8 w-8 text-primary group-hover:text-primary-foreground" />
+              {/* Image Section - Full Container */}
+              <div className="h-96 bg-white overflow-hidden">
+                <img 
+                  src={award.image} 
+                  alt={award.title}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                />
               </div>
               
-              <h3 className="text-xl font-bold text-foreground mb-2">{award.title}</h3>
-              <p className="text-primary font-medium mb-2">{award.organization}</p>
-              <p className="text-muted-foreground text-sm mb-4 leading-relaxed">{award.description}</p>
-              
-              <div className="inline-flex px-3 py-1 bg-muted rounded-full">
-                <span className="text-sm font-medium text-foreground">{award.year}</span>
+              {/* Text Section - 20% */}
+              <div className="p-4">
+                <div className="inline-flex px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium mb-3 w-fit">
+                  {award.year}
+                </div>
+                
+                <h3 className="text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
+                  {award.title}
+                </h3>
+                
+                <p className="text-primary font-semibold mb-3">
+                  {award.organization}
+                </p>
+                
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  {award.description}
+                </p>
               </div>
             </div>
           ))}
@@ -110,6 +126,51 @@ const AwardsRecognition = () => {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+
+        {/* Our Group of Companies Section */}
+        <div className="mt-16">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
+              Our Group of
+              <span className="gradient-text"> Companies</span>
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              A diverse portfolio of healthcare companies working together to provide comprehensive medical solutions
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8 mb-16">
+            <div className="card-pharmaceutical overflow-hidden group">
+              <div className="h-60 bg-white flex items-center justify-center p-6">
+                <img 
+                  src="https://i.ibb.co/zVvCsdkJ/Acme.jpg" 
+                  alt="Acme"
+                  className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+            </div>
+            
+            <div className="card-pharmaceutical overflow-hidden group">
+              <div className="h-60 bg-white overflow-hidden">
+                <img 
+                  src="https://i.ibb.co/Jjdg9N33/Acme-Life-Tech-LLP.png" 
+                  alt="Acme Life Tech LLP"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+            </div>
+            
+            <div className="card-pharmaceutical overflow-hidden group">
+              <div className="h-60 bg-white overflow-hidden">
+                <img 
+                  src="https://i.ibb.co/V0JkQwym/Acme-Diet-Care-Pvt-Ltd.png" 
+                  alt="Acme Diet Care Pvt Ltd"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+            </div>
           </div>
         </div>
 

@@ -57,7 +57,7 @@ const HeroSection = () => {
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 animate-fade-in-up">
             India's Most
             <span className="block bg-gradient-to-r from-white to-primary-light bg-clip-text text-transparent">
-              Economical Quality
+              Economical Branded
             </span>
             Medicines
           </h1>

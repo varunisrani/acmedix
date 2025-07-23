@@ -40,9 +40,16 @@ const Export = () => {
     <div className="min-h-screen">
       <Navigation />
       
-      {/* Hero Section */}
-      <section className="section-padding bg-gradient-to-r from-primary to-primary-hover text-white">
-        <div className="container mx-auto text-center">
+      {/* Hero Section with Background Image */}
+      <section className="relative section-padding text-white overflow-hidden">
+        {/* Background Image */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: 'url(https://i.ibb.co/rKYjFj0N/6301811.jpg)' }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-900/85 via-slate-800/75 to-slate-900/85"></div>
+        
+        <div className="container mx-auto text-center relative z-10">
           <h1 className="text-5xl md:text-6xl font-bold mb-6">
             Export <span className="text-white/90">Business</span>
           </h1>

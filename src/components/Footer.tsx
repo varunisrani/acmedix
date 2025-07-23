@@ -74,9 +74,25 @@ const Footer = () => {
               </div>
             </div>
             
-            <p className="text-slate-300 text-lg mb-8 leading-relaxed">
-              Four decades of pharmaceutical excellence in chronic care solutions, making healthcare accessible and affordable for millions worldwide.
-            </p>
+            {/* About Section with Background */}
+            <div className="relative rounded-2xl overflow-hidden mb-8">
+              {/* Background Image */}
+              <div 
+                className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+                style={{ backgroundImage: 'url(https://i.ibb.co/8gjs3sC0/sl-040220-29550-19.jpg)' }}
+              />
+              <div className="absolute inset-0 bg-gradient-to-r from-slate-900/90 via-slate-800/85 to-transparent" />
+              
+              {/* Content */}
+              <div className="relative z-10 p-8">
+                <h3 className="text-2xl font-bold text-white mb-4">
+                  About Acmedix Pharma
+                </h3>
+                <p className="text-slate-100 text-lg leading-relaxed">
+                  Four decades of pharmaceutical excellence in chronic care solutions, making healthcare accessible and affordable for millions worldwide.
+                </p>
+              </div>
+            </div>
 
             {/* Contact Info */}
             <div className="space-y-4 mb-8">

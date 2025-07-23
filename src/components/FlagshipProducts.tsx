@@ -18,11 +18,11 @@ const FlagshipProducts = () => {
       features: ["International Standards", "Quality Assured", "Doctor Recommended"]
     },
     {
-      name: "Empiga",
-      category: "Empagliflozin Drug",
-      description: "Revolutionary diabetes treatment for effective blood sugar control",
-      image: "https://i.ibb.co/jk76gnx6/Empiga-Logo-1.png",
-      features: ["FDA Approved", "Advanced Formula", "Patient Tested"]
+      name: "Acmeglim",
+      category: "Glimepiride Drug",
+      description: "Advanced diabetes management solution with superior glycemic control",
+      image: "https://i.ibb.co/nsLNrdM9/Acmeglim.png",
+      features: ["WHO-GMP Certified", "Enhanced Bioavailability", "Clinically Proven"]
     }
   ];
 
