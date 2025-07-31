@@ -92,11 +92,13 @@ const Manufacturing = () => {
         <div className="container mx-auto relative z-10">
           <div className="text-center mb-12">
             <div className="flex items-center justify-center mb-6">
-              <img 
-                src="https://i.ibb.co/5g3yJ9vz/acme-group-logo.webp" 
-                alt="Acme Group Logo" 
-                className="h-16 md:h-20 object-contain mr-4"
-              />
+              <div className="bg-primary p-3 rounded-lg mr-4">
+                <img 
+                  src="https://i.ibb.co/5g3yJ9vz/acme-group-logo.webp" 
+                  alt="Acme Group Logo" 
+                  className="h-16 md:h-20 object-contain"
+                />
+              </div>
               <h2 className="text-4xl md:text-5xl font-bold text-foreground">
                 Manufacturing <span className="gradient-text">Prowess</span>
               </h2>
