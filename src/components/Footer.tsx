@@ -102,7 +102,7 @@ const Footer = () => {
                 </div>
                 <div>
                   <span className="text-slate-400 text-sm block">Call Us</span>
-                  <span className="text-white font-medium">+91-XXX-XXX-XXXX</span>
+                  <span className="text-white font-medium">+91-917-948-07524</span>
                 </div>
               </div>
               
