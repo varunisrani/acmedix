@@ -151,8 +151,8 @@ const RnD = () => {
                     <div className="text-xs text-muted-foreground">Active Projects</div>
                   </div>
                   <div className="card-pharmaceutical p-4 text-center bg-gradient-to-br from-primary/10 to-primary/5">
-                    <div className="text-2xl font-bold text-primary mb-1">50+</div>
-                    <div className="text-xs text-muted-foreground">Formulations</div>
+                    <div className="text-2xl font-bold text-primary mb-1">250 cr</div>
+                    <div className="text-xs text-muted-foreground">saving by patients</div>
                   </div>
                 </div>
               </div>

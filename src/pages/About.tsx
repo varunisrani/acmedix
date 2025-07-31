@@ -8,7 +8,7 @@ const About = () => {
       icon: Shield,
       title: "Affordability",
       description: "Delivering high-quality, effective pharmaceutical products at the most economical prices, ensuring chronic care therapies are accessible to a wider population.",
-      highlight: "70% Cost Savings"
+      highlight: "250 cr saving by patients"
     },
     {
       icon: Lightbulb,
@@ -20,7 +20,7 @@ const About = () => {
       icon: Target,
       title: "Quality Assurance",
       description: "Upholding Acme Group's 40-year legacy of manufacturing premium pharmaceutical products, ensuring stable, safe, and effective treatments.",
-      highlight: "40+ Years Legacy"
+      highlight: "15,000 doctors trust"
     },
     {
       icon: Heart,
@@ -43,10 +43,10 @@ const About = () => {
   ];
 
   const companyStats = [
-    { number: "40+", label: "Years of Excellence", icon: Award },
-    { number: "70%", label: "Cost Savings", icon: TrendingUp },
-    { number: "1000+", label: "Healthcare Partners", icon: Users },
-    { number: "50+", label: "Product Portfolio", icon: Zap }
+    { number: "15,000", label: "doctors trust", icon: Award },
+    { number: "50,000", label: "chemist network", icon: TrendingUp },
+    { number: "5 lac +", label: "Happy patients", icon: Users },
+    { number: "250 cr", label: "saving by patients", icon: Zap }
   ];
 
 
@@ -125,7 +125,7 @@ const About = () => {
                 </p>
                 
                 <p>
-                  Our products deliver <span className="font-semibold text-primary">superior bio-availability at highly competitive prices</span>, offering patients managing chronic conditions substantial long-term savings of at least 70% compared to market leaders.
+                  Our products deliver <span className="font-semibold text-primary">superior bio-availability at highly competitive prices</span>, offering patients managing chronic conditions substantial long-term savings with our network of 50,000 chemists and 15,000 trusted doctors.
                 </p>
                 
                 <div className="bg-primary-light p-6 rounded-lg border-l-4 border-primary">
@@ -142,11 +142,11 @@ const About = () => {
                 <div className="space-y-4">
                   <div className="flex items-center space-x-4">
                     <div className="w-3 h-3 bg-primary rounded-full"></div>
-                    <span className="text-muted-foreground">Trusted by 1000+ healthcare professionals</span>
+                    <span className="text-muted-foreground">Trusted by 15,000 doctors</span>
                   </div>
                   <div className="flex items-center space-x-4">
                     <div className="w-3 h-3 bg-primary rounded-full"></div>
-                    <span className="text-muted-foreground">Serving millions of chronic care patients</span>
+                    <span className="text-muted-foreground">Serving 5 lac+ happy patients</span>
                   </div>
                   <div className="flex items-center space-x-4">
                     <div className="w-3 h-3 bg-primary rounded-full"></div>
