@@ -5,22 +5,22 @@ const FlagshipProducts = () => {
   const products = [
     {
       name: "Daxiga",
-      category: "Cardiovascular Drug",
-      description: "Advanced cardiac care medication for comprehensive heart health management",
+      category: "Dapagliflozin Range",
+      description: "SGLT2 inhibitor for Type 2 Diabetes and Heart Failure management",
       image: "https://i.ibb.co/N6ds6yTw/daxiga.png",
       features: ["WHO-GMP Certified", "Cost Effective", "Proven Efficacy"]
     },
     {
       name: "Acmerose",
-      category: "Rosuvastatin Drug",
+      category: "Rosuvastatin Range",
       description: "High-quality cholesterol management solution with superior bioavailability",
       image: "https://i.ibb.co/fzVV0YqV/Acmerose.png",
       features: ["International Standards", "Quality Assured", "Doctor Recommended"]
     },
     {
       name: "Acmeglim",
-      category: "Glimepiride Drug",
-      description: "Advanced diabetes management solution with superior glycemic control",
+      category: "Glimepiride with Metformin range",
+      description: "Time tested combination for Glycemic control in Diabetes Management",
       image: "https://i.ibb.co/nsLNrdM9/Acmeglim.png",
       features: ["WHO-GMP Certified", "Enhanced Bioavailability", "Clinically Proven"]
     }

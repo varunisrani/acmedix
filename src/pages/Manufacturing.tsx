@@ -40,18 +40,21 @@ const Manufacturing = () => {
   const manufacturingUnits = [
     {
       image: "https://images.unsplash.com/photo-1582719471384-894fbb16e074?w=600&h=400&fit=crop",
-      title: "Unit 1 - Solid Dosage Forms",
-      description: "State-of-the-art facility for tablet and capsule manufacturing"
+      title: "Acme 1 - Acme Lifetech LLP",
+      description: "Advanced pharmaceutical manufacturing facility with modern technology and quality systems",
+      website: "https://acmegrp.in/acme-lifetech-llp/"
     },
     {
       image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=600&h=400&fit=crop",
-      title: "Unit 2 - Liquid Formulations",
-      description: "Advanced liquid manufacturing with automated filling systems"
+      title: "Acme 2 - F&D",
+      description: "Specialized formulation and development center for innovative pharmaceutical solutions",
+      website: "https://acmegrp.in/acme-fd/"
     },
     {
       image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=600&h=400&fit=crop",
-      title: "Unit 3 - Sterile Products",
-      description: "ISO Class 5 cleanroom for sterile pharmaceutical production"
+      title: "Acme 3 - Acme Dietcare Pvt. Ltd.",
+      description: "Dedicated facility for specialized dietary and nutraceutical product manufacturing",
+      website: "https://acmedix.vercel.app/"
     }
   ];
 
@@ -157,12 +160,12 @@ const Manufacturing = () => {
               </p>
               <div className="grid grid-cols-2 gap-4">
                 <div className="text-center p-3 bg-accent/5 rounded-lg">
-                  <div className="text-2xl font-bold text-accent">40+</div>
-                  <div className="text-xs text-muted-foreground">Years Experience</div>
+                  <div className="text-2xl font-bold text-accent">15,000</div>
+                  <div className="text-xs text-muted-foreground">doctors trust</div>
                 </div>
                 <div className="text-center p-3 bg-accent/5 rounded-lg">
-                  <div className="text-2xl font-bold text-accent">100+</div>
-                  <div className="text-xs text-muted-foreground">Brand Partners</div>
+                  <div className="text-2xl font-bold text-accent">50,000</div>
+                  <div className="text-xs text-muted-foreground">chemist network</div>
                 </div>
               </div>
             </div>
@@ -241,9 +244,19 @@ const Manufacturing = () => {
                   <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">
                     {unit.title}
                   </h3>
-                  <p className="text-muted-foreground leading-relaxed">
+                  <p className="text-muted-foreground leading-relaxed mb-4">
                     {unit.description}
                   </p>
+                  {unit.website && (
+                    <a 
+                      href={unit.website}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center text-primary hover:text-primary-hover font-medium text-sm transition-colors"
+                    >
+                      Learn More →
+                    </a>
+                  )}
                 </div>
               </div>
             ))}
