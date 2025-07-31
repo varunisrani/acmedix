@@ -39,21 +39,21 @@ const Manufacturing = () => {
 
   const manufacturingUnits = [
     {
-      image: "https://images.unsplash.com/photo-1582719471384-894fbb16e074?w=600&h=400&fit=crop",
+      image: "https://chat.google.com/u/0/api/get_attachment_url?url_type=FIFE_URL&content_type=image%2Fjpeg&attachment_token=AOo0EEWAQYAj0SnxVg%2Bh6LObyySP82%2BoBpTQcN39o%2FCZpmOImbIrYl0HDpHxD4ubKh3g0n4heczVm6JeC0ELhAV3fnyf%2BCqYT4aQ1AZjN1%2FajNWIs%2FY5GLa9XDNVP%2FZIwLyw58gpp68Iq%2FSJheeSNLLxY%2Fw0oCyoBQgdgF%2B9IOxowT9qrkWTP3jRF322ufw%2F0UXSq3%2F0AJpv77gY2VHpDsuxhYI1PefRqqyAQTCg4f95kaK3vgfBWw1lNe7qJT1pzl9R9%2F54W8dlBqFntD64WUq7r%2BW3Pd51zR4VftqGB6ilIJhNvB%2BKE0gS5MJsjgRWlWmudDZdMlVbpU6qGu2PV6Y1NwEw5zzotLF1uPh%2B0r2OLak4az5fruQz6dVeAZKqImD4%2BfKhu3V7DnIaSlXmGjsBK6ly9m4Bn%2BFOnm3UG1%2FbODIdoH0sQJDkWho9n2GPnPbE1VRmeXsfeIVGq1o6JyZQHyofXFweVebAjZjYxbHC9a%2BhBgMy%2FgB6Lx4YZhH75yY8WdM%2F5wWWKpwLFtrP927NUVQccZT4c3v1fUq2GXgyeH4Uv5Da13%2BRBZkMvHylkgQL747luZk%3D&allow_caching=true&sz=w2260-h1288",
       title: "Acme 1 - Acme Lifetech LLP",
-      description: "Advanced pharmaceutical manufacturing facility with modern technology and quality systems. State-of-the-art infrastructure for high-quality pharmaceutical production.",
+      description: "World-class pharmaceutical manufacturing facility featuring cutting-edge technology, automated production lines, and stringent quality control systems. Specialized in high-volume production of tablets, capsules, and sterile injectables with WHO-GMP compliance.",
       website: "https://acmegrp.in/acme-lifetech-llp/"
     },
     {
-      image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=600&h=400&fit=crop", 
+      image: "https://chat.google.com/u/0/api/get_attachment_url?url_type=FIFE_URL&content_type=image%2Fjpeg&attachment_token=AOo0EEVX0h7DbuDokKuC4YUxEbheQ8%2BcCJmiq4E8908yserBXkMNN3LAOw8FR8xPbXPWYmX7gid%2BEVpTLgJQAe5jpfXe5dqavskU1XXuStyFKeC4O0gNRZXm5kHlhGPnGomIuJ%2FGyp6Thp%2FBzJrwuNa1RDUzw3nbUkf1WjznxTMh1%2Fz53OA0%2FEQiL6tLo829qQSLsHohz%2FlEmbcGUAVG%2FKB5l7hRGB1jtw9e0xHbJP%2BOFqrA0leMboYZ6TigpEjfc7gUcLFgP%2FyjgZb47aaqaHvcfRrThXHn8toRpyRQeKMjXb9563SCwvkci2ip2aWtEY%2B8Eevv%2F%2BetaSi18zyfi35Uh9GsOJYjUfPYqy4IfPjAK%2BYmrZFkV2fHaT6aj3XmttB4rSZxW0OWQkgvT40QgUUC9u5qh%2FqeRB34fDsZQPKN2flbFHSrm8W1nAqo1AEF1AFWoVlQd97K43a3xgGENcVelaqqtD%2FmDLLpDBJuvuvfw2NncW68G8E0RHzN2bfyIIiwF%2FLd%2FoJSk3BfBfvEtnUJou5KtoDvHEXl%2Ftiuo125jHcGGjVrdt5OkbWVw%2BeLB7OfaINqaA%3D%3D&allow_caching=true&sz=w2260-h1288", 
       title: "Acme 2 - F&D",
-      description: "Specialized formulation and development center for innovative pharmaceutical solutions. Cutting-edge R&D facility for advanced drug development.",
+      description: "Advanced formulation and development center dedicated to innovative pharmaceutical research and product development. Houses state-of-the-art analytical laboratories, pilot production units, and R&D facilities for next-generation therapeutic solutions.",
       website: "https://acmegrp.in/acme-fd/"
     },
     {
-      image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=600&h=400&fit=crop",
+      image: "https://chat.google.com/u/0/api/get_attachment_url?url_type=FIFE_URL&content_type=image%2Fjpeg&attachment_token=AOo0EEUSVZwpPrCeJfnXkQ%2BwKXGx2k1IuHWLrG7PPqT1xComf0RZQX0h%2B%2FeUfLmG%2BAuOP%2BJgGP3HejqbvXfE2I81WJtMnffQb6fX6B21xuSvRnRDoHCXO6LS8w63Zpi%2FRWffi447Yk8ZhamAZ%2FqCZsf6Sgyt9127Ug8Xkpa2e20WZDDUggPv6T8s9jswERpeJDn7J9t9eX7njs2WsoQtUsjQ2h1uQIIIfL2f6lM8IJBC7%2FD%2FrF1hcFBiGM3YfEwIefufFhbnfuryA5sw80Tzrn19X6I%2FALnMvKmvaRB8sWEpwJU74fjiR%2BfBYSVW0tMBvXt2EHKbJw%2FewMW6i1%2BNaF%2B2i87gB8OlrFLXmzaaXw%2BWCU%2FI%2B%2BJQuFy4ci4Ie6AWHU5rGWx387Rzk8P5FFBCAejyHRgsyqx%2BKAs%2F5CQipI5TusLXG0f14cP0mkUpip%2FndGuFoeOjya2EVWWQI7ZvpXBc5EHGD8WyvG2Qstk%2FH3eYbOKkg8zICP%2BJ6%2F5FsL5sDIZlXwHOjFGtJxdZR%2Fb6x7129Ejp1Xff%2BLqvaLo6hoFIqdbAF8J2fkVUPSUZmXeWKnpN%2FwuuOgU%3D&allow_caching=true&sz=w2260-h1288",
       title: "Acme 3 - Acme Dietcare Pvt. Ltd.",
-      description: "Dedicated facility for specialized dietary and nutraceutical product manufacturing. Focus on health and wellness product development.",
+      description: "Specialized manufacturing facility focused on nutraceuticals, dietary supplements, and wellness products. Features dedicated production lines for health supplements, functional foods, and specialized therapeutic nutrition products with international quality standards.",
       website: "https://acmedix.vercel.app/"
     }
   ];
