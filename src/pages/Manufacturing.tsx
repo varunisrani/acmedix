@@ -41,19 +41,19 @@ const Manufacturing = () => {
     {
       image: "https://images.unsplash.com/photo-1582719471384-894fbb16e074?w=600&h=400&fit=crop",
       title: "Acme 1 - Acme Lifetech LLP",
-      description: "Advanced pharmaceutical manufacturing facility with modern technology and quality systems",
+      description: "Advanced pharmaceutical manufacturing facility with modern technology and quality systems. State-of-the-art infrastructure for high-quality pharmaceutical production.",
       website: "https://acmegrp.in/acme-lifetech-llp/"
     },
     {
-      image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=600&h=400&fit=crop",
+      image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=600&h=400&fit=crop", 
       title: "Acme 2 - F&D",
-      description: "Specialized formulation and development center for innovative pharmaceutical solutions",
+      description: "Specialized formulation and development center for innovative pharmaceutical solutions. Cutting-edge R&D facility for advanced drug development.",
       website: "https://acmegrp.in/acme-fd/"
     },
     {
       image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=600&h=400&fit=crop",
       title: "Acme 3 - Acme Dietcare Pvt. Ltd.",
-      description: "Dedicated facility for specialized dietary and nutraceutical product manufacturing",
+      description: "Dedicated facility for specialized dietary and nutraceutical product manufacturing. Focus on health and wellness product development.",
       website: "https://acmedix.vercel.app/"
     }
   ];
@@ -160,12 +160,12 @@ const Manufacturing = () => {
               </p>
               <div className="grid grid-cols-2 gap-4">
                 <div className="text-center p-3 bg-accent/5 rounded-lg">
-                  <div className="text-2xl font-bold text-accent">15,000</div>
-                  <div className="text-xs text-muted-foreground">doctors trust</div>
+                  <div className="text-2xl font-bold text-accent">5 lac+</div>
+                  <div className="text-xs text-muted-foreground">Happy patients</div>
                 </div>
                 <div className="text-center p-3 bg-accent/5 rounded-lg">
-                  <div className="text-2xl font-bold text-accent">50,000</div>
-                  <div className="text-xs text-muted-foreground">chemist network</div>
+                  <div className="text-2xl font-bold text-accent">250 cr</div>
+                  <div className="text-xs text-muted-foreground">saving by patients</div>
                 </div>
               </div>
             </div>
