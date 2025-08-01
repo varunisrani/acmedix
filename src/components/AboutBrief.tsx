@@ -51,21 +51,21 @@ const AboutBrief = () => {
 
           {/* Right Stats */}
           <div>
-            <div className="grid grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 md:gap-8">
               {stats.map((stat, index) => (
                 <div 
                   key={stat.label}
-                  className="text-center p-6 card-pharmaceutical group"
+                  className="text-center p-4 sm:p-6 card-pharmaceutical group"
                   style={{ 
                     opacity: 1,
                     transform: 'translateY(0)',
                     animation: `scale-in 0.6s ease-out ${index * 0.1}s both`
                   }}
                 >
-                  <div className="text-4xl md:text-5xl font-bold text-primary mb-2 group-hover:scale-110 transition-transform duration-300">
+                  <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-primary mb-2 group-hover:scale-110 transition-transform duration-300">
                     {stat.number}{stat.suffix}
                   </div>
-                  <div className="text-muted-foreground font-medium">{stat.label}</div>
+                  <div className="text-sm sm:text-base text-muted-foreground font-medium">{stat.label}</div>
                 </div>
               ))}
             </div>
