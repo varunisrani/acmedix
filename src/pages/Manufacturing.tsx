@@ -103,9 +103,6 @@ const Manufacturing = () => {
                 Manufacturing <span className="gradient-text">Prowess</span>
               </h2>
             </div>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Four decades of pharmaceutical excellence driving India's most economical chronic care solutions
-            </p>
           </div>
 
           <div className="grid lg:grid-cols-3 gap-8">
@@ -180,40 +177,6 @@ const Manufacturing = () => {
             </div>
           </div>
 
-          {/* Key Highlights Bar */}
-          <div className="mt-12 bg-gradient-to-r from-primary/10 via-accent/10 to-primary/10 rounded-2xl p-8">
-            <div className="grid md:grid-cols-3 gap-6 text-center">
-              <div className="flex items-center justify-center space-x-3">
-                <div className="p-3 bg-primary rounded-full">
-                  <CheckCircle className="h-6 w-6 text-primary-foreground" />
-                </div>
-                <div className="text-left">
-                  <div className="font-bold text-foreground">Self Manufacturing</div>
-                  <div className="text-sm text-muted-foreground">Complete control over quality</div>
-                </div>
-              </div>
-              
-              <div className="flex items-center justify-center space-x-3">
-                <div className="p-3 bg-accent rounded-full">
-                  <Shield className="h-6 w-6 text-accent-foreground" />
-                </div>
-                <div className="text-left">
-                  <div className="font-bold text-foreground">40 Years Legacy</div>
-                  <div className="text-sm text-muted-foreground">Trusted pharmaceutical partner</div>
-                </div>
-              </div>
-              
-              <div className="flex items-center justify-center space-x-3">
-                <div className="p-3 bg-primary rounded-full">
-                  <Award className="h-6 w-6 text-primary-foreground" />
-                </div>
-                <div className="text-left">
-                  <div className="font-bold text-foreground">Top Tier Elite</div>
-                  <div className="text-sm text-muted-foreground">8% pharmaceutical companies</div>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       </section>
 

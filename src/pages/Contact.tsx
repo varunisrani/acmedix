@@ -20,9 +20,7 @@ const Contact = () => {
       icon: Phone,
       title: "Call Us",
       details: [
-        "Main Office: +91-XXX-XXX-XXXX",
-        "Sales: +91-XXX-XXX-XXXY",
-        "Export: +91-XXX-XXX-XXXZ"
+        "Main Office: +91 7948907524"
       ]
     },
     {

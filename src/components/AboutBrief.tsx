@@ -3,10 +3,10 @@ import { Users, Target, Award, Building2 } from 'lucide-react';
 
 const AboutBrief = () => {
   const stats = [
-    { number: "15,000", label: "doctors trust", suffix: "" },
-    { number: "50,000", label: "chemist network", suffix: "" },
+    { number: "15,000", label: "doctors trust", suffix: "+" },
+    { number: "50,000", label: "chemist network", suffix: "+" },
     { number: "5", label: "Happy patients", suffix: " lac+" },
-    { number: "250", label: "saving by patients", suffix: " cr" }
+    { number: "250", label: "saving by patients", suffix: " cr+" }
   ];
 
   return (

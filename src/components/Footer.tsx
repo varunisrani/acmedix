@@ -26,17 +26,6 @@ const Footer = () => {
       ]
     },
     {
-      title: "Resources",
-      icon: Beaker,
-      links: [
-        { name: "Blog", href: "/blog" },
-        { name: "Quality Standards", href: "#quality" },
-        { name: "Medical Information", href: "#medical-info" },
-        { name: "Downloads", href: "#downloads" },
-        { name: "Research Papers", href: "#research" }
-      ]
-    },
-    {
       title: "Support",
       icon: Users,
       links: [
@@ -102,7 +91,7 @@ const Footer = () => {
                 </div>
                 <div>
                   <span className="text-slate-400 text-sm block">Call Us</span>
-                  <span className="text-white font-medium">+91-917-948-07524</span>
+                  <span className="text-white font-medium">+91 7948907524</span>
                 </div>
               </div>
               

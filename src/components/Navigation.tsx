@@ -110,7 +110,7 @@ const Navigation = () => {
           <div className="flex items-center space-x-4">
             <div className="flex items-center space-x-2">
               <Phone className="h-4 w-4" />
-              <span>7948907524</span>
+              <span>+91 7948907524</span>
             </div>
             <div className="flex items-center space-x-2">
               <Mail className="h-4 w-4" />
@@ -234,12 +234,6 @@ const Navigation = () => {
               ))}
             </div>
 
-            {/* CTA Button */}
-            <div className="hidden lg:block">
-              <Button className="btn-primary">
-                Get Quote
-              </Button>
-            </div>
 
             {/* Mobile Menu */}
             <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
@@ -290,10 +284,6 @@ const Navigation = () => {
                       {item.name}
                     </Link>
                   ))}
-                  
-                  <Button className="btn-primary mt-4">
-                    Get Quote
-                  </Button>
                 </div>
               </SheetContent>
             </Sheet>
