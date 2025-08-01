@@ -85,21 +85,21 @@ const About = () => {
       {/* Company Stats Section */}
       <section className="section-padding bg-background -mt-16 relative z-20">
         <div className="container mx-auto">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 max-w-4xl mx-auto">
             {companyStats.map((stat, index) => (
               <div 
                 key={stat.label}
-                className="card-pharmaceutical p-6 text-center group"
+                className="card-pharmaceutical p-4 sm:p-6 text-center group"
                 style={{ 
                   animationDelay: `${index * 0.1}s`,
                   animation: 'fade-in-up 0.8s ease-out both'
                 }}
               >
-                <div className="inline-flex p-3 bg-primary-light rounded-full mb-4 group-hover:bg-primary transition-all duration-300">
-                  <stat.icon className="h-6 w-6 text-primary group-hover:text-primary-foreground" />
+                <div className="inline-flex p-2 sm:p-3 bg-primary-light rounded-full mb-3 sm:mb-4 group-hover:bg-primary transition-all duration-300">
+                  <stat.icon className="h-5 w-5 sm:h-6 sm:w-6 text-primary group-hover:text-primary-foreground" />
                 </div>
-                <div className="counter-number text-3xl font-bold text-primary mb-2">{stat.number}</div>
-                <p className="text-muted-foreground font-medium text-sm">{stat.label}</p>
+                <div className="counter-number text-2xl sm:text-3xl font-bold text-primary mb-2">{stat.number}</div>
+                <p className="text-muted-foreground font-medium text-xs sm:text-sm">{stat.label}</p>
               </div>
             ))}
           </div>
