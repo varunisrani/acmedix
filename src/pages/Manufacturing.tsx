@@ -103,9 +103,6 @@ const Manufacturing = () => {
                 Manufacturing <span className="gradient-text">Prowess</span>
               </h2>
             </div>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Four decades of pharmaceutical excellence driving India's most economical chronic care solutions
-            </p>
           </div>
 
           <div className="grid lg:grid-cols-3 gap-8">
@@ -117,7 +114,6 @@ const Manufacturing = () => {
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-foreground">Chronic Care Focus</h3>
-                  <p className="text-sm text-primary font-medium">Marketing Venture of Acme Group</p>
                 </div>
               </div>
               <p className="text-muted-foreground leading-relaxed">
@@ -138,19 +134,11 @@ const Manufacturing = () => {
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-white">Elite Manufacturing</h3>
-                  <p className="text-sm text-white/80 font-medium">Top 8% Pharmaceutical Companies</p>
                 </div>
               </div>
               <p className="text-white/90 leading-relaxed mb-4">
                 Acmedix is one of <span className="font-bold text-white">8% pharmaceutical companies</span> with large scale self-manufacturing prowess.
               </p>
-              <div className="bg-white/20 rounded-lg p-4">
-                <div className="flex items-center space-x-2">
-                  <Award className="h-5 w-5 text-white" />
-                  <span className="text-white font-semibold">40 Years Legacy</span>
-                </div>
-                <p className="text-white/80 text-sm mt-1">Self-manufacturing excellence</p>
-              </div>
             </div>
 
             {/* Card 3 - Global Reach */}
@@ -161,7 +149,6 @@ const Manufacturing = () => {
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-foreground">Global Excellence</h3>
-                  <p className="text-sm text-accent font-medium">40 Years of Trust</p>
                 </div>
               </div>
               <p className="text-muted-foreground leading-relaxed mb-4">
@@ -180,40 +167,6 @@ const Manufacturing = () => {
             </div>
           </div>
 
-          {/* Key Highlights Bar */}
-          <div className="mt-12 bg-gradient-to-r from-primary/10 via-accent/10 to-primary/10 rounded-2xl p-8">
-            <div className="grid md:grid-cols-3 gap-6 text-center">
-              <div className="flex items-center justify-center space-x-3">
-                <div className="p-3 bg-primary rounded-full">
-                  <CheckCircle className="h-6 w-6 text-primary-foreground" />
-                </div>
-                <div className="text-left">
-                  <div className="font-bold text-foreground">Self Manufacturing</div>
-                  <div className="text-sm text-muted-foreground">Complete control over quality</div>
-                </div>
-              </div>
-              
-              <div className="flex items-center justify-center space-x-3">
-                <div className="p-3 bg-accent rounded-full">
-                  <Shield className="h-6 w-6 text-accent-foreground" />
-                </div>
-                <div className="text-left">
-                  <div className="font-bold text-foreground">40 Years Legacy</div>
-                  <div className="text-sm text-muted-foreground">Trusted pharmaceutical partner</div>
-                </div>
-              </div>
-              
-              <div className="flex items-center justify-center space-x-3">
-                <div className="p-3 bg-primary rounded-full">
-                  <Award className="h-6 w-6 text-primary-foreground" />
-                </div>
-                <div className="text-left">
-                  <div className="font-bold text-foreground">Top Tier Elite</div>
-                  <div className="text-sm text-muted-foreground">8% pharmaceutical companies</div>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       </section>
 
