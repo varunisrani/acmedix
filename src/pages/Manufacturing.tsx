@@ -114,7 +114,6 @@ const Manufacturing = () => {
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-foreground">Chronic Care Focus</h3>
-                  <p className="text-sm text-primary font-medium">Marketing Venture of Acme Group</p>
                 </div>
               </div>
               <p className="text-muted-foreground leading-relaxed">
@@ -135,19 +134,11 @@ const Manufacturing = () => {
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-white">Elite Manufacturing</h3>
-                  <p className="text-sm text-white/80 font-medium">Top 8% Pharmaceutical Companies</p>
                 </div>
               </div>
               <p className="text-white/90 leading-relaxed mb-4">
                 Acmedix is one of <span className="font-bold text-white">8% pharmaceutical companies</span> with large scale self-manufacturing prowess.
               </p>
-              <div className="bg-white/20 rounded-lg p-4">
-                <div className="flex items-center space-x-2">
-                  <Award className="h-5 w-5 text-white" />
-                  <span className="text-white font-semibold">40 Years Legacy</span>
-                </div>
-                <p className="text-white/80 text-sm mt-1">Self-manufacturing excellence</p>
-              </div>
             </div>
 
             {/* Card 3 - Global Reach */}
@@ -158,7 +149,6 @@ const Manufacturing = () => {
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-foreground">Global Excellence</h3>
-                  <p className="text-sm text-accent font-medium">40 Years of Trust</p>
                 </div>
               </div>
               <p className="text-muted-foreground leading-relaxed mb-4">
