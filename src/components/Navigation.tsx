@@ -262,12 +262,17 @@ const Navigation = () => {
                     <span className="text-lg font-medium text-foreground">Products</span>
                     <div className="mt-2 pl-4 space-y-2">
                       {productCategories.map((category) => (
-                        <div key={category.id} className="flex items-center space-x-3 py-1">
+                        <Link
+                          key={category.id}
+                          to={`/products/${category.id}`}
+                          onClick={() => setIsMobileMenuOpen(false)}
+                          className="flex items-center space-x-3 py-1 hover:text-primary transition-colors duration-200"
+                        >
                           <div className={`p-1 ${category.color} rounded`}>
                             <category.icon className="h-3 w-3 text-white" />
                           </div>
-                          <span className="text-sm text-muted-foreground">{category.name}</span>
-                        </div>
+                          <span className="text-sm text-muted-foreground hover:text-primary transition-colors duration-200">{category.name}</span>
+                        </Link>
                       ))}
                     </div>
                   </div>
