@@ -72,19 +72,19 @@ const Manufacturing = () => {
         <div className="absolute inset-0 bg-gradient-to-r from-slate-900/85 via-slate-800/75 to-slate-900/85"></div>
         
         <div className="container mx-auto text-center relative z-10">
-          <div className="flex items-center justify-center mb-8">
-            <div className="bg-white/10 backdrop-blur-sm p-4 rounded-lg mr-6">
+          <div className="flex flex-col md:flex-row items-center justify-center mb-8">
+            <div className="bg-white/10 backdrop-blur-sm p-3 md:p-4 rounded-lg mb-4 md:mb-0 md:mr-6">
               <img 
                 src="https://i.ibb.co/5g3yJ9vz/acme-group-logo.webp" 
                 alt="Acme Group Logo" 
-                className="h-16 md:h-20 object-contain"
+                className="h-12 sm:h-14 md:h-16 lg:h-20 object-contain"
               />
             </div>
-            <h1 className="text-5xl md:text-6xl font-bold">
-              Manufacturing <span className="text-white/90">Excellence</span>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+              Manufacturing <span className="text-white/90 block sm:inline">Excellence</span>
             </h1>
           </div>
-          <p className="text-xl md:text-2xl text-white/90 max-w-4xl mx-auto">
+          <p className="text-lg sm:text-xl md:text-2xl text-white/90 max-w-4xl mx-auto px-4">
             40 years of pharmaceutical manufacturing expertise with cutting-edge facilities
           </p>
         </div>
