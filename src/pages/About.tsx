@@ -67,7 +67,7 @@ const About = () => {
           <div className="max-w-4xl mx-auto text-center">
             <div className="inline-flex items-center bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full mb-8">
               <Globe className="h-5 w-5 mr-2" />
-              <span className="text-sm font-medium">Trusted Globally Since 1983</span>
+              <span className="text-sm font-medium">Trusted Globally Since 1985</span>
             </div>
             
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
@@ -193,38 +193,6 @@ const About = () => {
               </div>
             </div>
 
-            {/* Mission */}
-            <div className="relative">
-              <div className="card-pharmaceutical p-8 h-full bg-gradient-to-br from-primary to-primary-hover text-white">
-                <div className="flex items-center mb-6">
-                  <div className="p-4 bg-white/20 rounded-full mr-4 shadow-lg">
-                    <Lightbulb className="h-8 w-8 text-white" />
-                  </div>
-                  <h3 className="text-3xl font-bold text-white">Our Mission</h3>
-                </div>
-                
-                <div className="space-y-4">
-                  <div className="flex items-start space-x-3">
-                    <div className="w-2 h-2 bg-white rounded-full mt-3 flex-shrink-0"></div>
-                    <p className="text-white/90 leading-relaxed">
-                      <span className="font-semibold text-white">Global Healthcare Leadership:</span> Be recognized worldwide as a reliable provider of high-quality healthcare solutions.
-                    </p>
-                  </div>
-                  <div className="flex items-start space-x-3">
-                    <div className="w-2 h-2 bg-white rounded-full mt-3 flex-shrink-0"></div>
-                    <p className="text-white/90 leading-relaxed">
-                      <span className="font-semibold text-white">Innovation-Driven Value:</span> Deliver exceptional value through innovation, affordability, and specialization in healthcare.
-                    </p>
-                  </div>
-                  <div className="flex items-start space-x-3">
-                    <div className="w-2 h-2 bg-white rounded-full mt-3 flex-shrink-0"></div>
-                    <p className="text-white/90 leading-relaxed">
-                      <span className="font-semibold text-white">Empowered Culture:</span> Foster a high-performance environment that nurtures talent, learning, and collective success.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </section>

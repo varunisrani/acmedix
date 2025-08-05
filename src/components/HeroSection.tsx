@@ -90,12 +90,12 @@ const HeroSection = () => {
               <p className="text-white/80 font-medium">Years Legacy</p>
             </div>
             <div className="text-center">
-              <div className="counter-number">{counters.savings}%</div>
-              <p className="text-white/80 font-medium">Cost Savings</p>
-            </div>
-            <div className="text-center">
               <div className="counter-number">{counters.units}</div>
               <p className="text-white/80 font-medium">Manufacturing Units</p>
+            </div>
+            <div className="text-center">
+              <div className="counter-number">{counters.savings}%</div>
+              <p className="text-white/80 font-medium">Cost Savings</p>
             </div>
             <div className="text-center">
               <div className="counter-number">{counters.products}+</div>

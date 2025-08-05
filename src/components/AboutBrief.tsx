@@ -70,21 +70,6 @@ const AboutBrief = () => {
               ))}
             </div>
 
-            {/* Mission Statement */}
-            <div className="mt-12 p-8 bg-gradient-to-br from-primary-light to-background rounded-xl border border-primary/10">
-              <div className="flex items-start space-x-4">
-                <div className="p-3 bg-primary/10 rounded-lg">
-                  <Target className="h-6 w-6 text-primary" />
-                </div>
-                <div>
-                  <h4 className="text-xl font-semibold text-foreground mb-3">Our Mission</h4>
-                  <p className="text-muted-foreground leading-relaxed">
-                    To provide high-quality, affordable medicines that improve lives and 
-                    make healthcare accessible to all communities worldwide.
-                  </p>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>
