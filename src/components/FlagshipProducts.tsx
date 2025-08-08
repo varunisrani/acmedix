@@ -23,6 +23,27 @@ const FlagshipProducts = () => {
       description: "Time tested combination for Glycemic control in Diabetes Management",
       image: "https://i.ibb.co/nsLNrdM9/Acmeglim.png",
       features: ["WHO-GMP Certified", "Enhanced Bioavailability", "Clinically Proven"]
+    },
+    {
+      name: "Empiga",
+      category: "Empagliflozin Range",
+      description: "SGLT2 inhibitor therapy supporting glycemic control in Type 2 Diabetes",
+      image: "https://i.ibb.co/qLhXZ1bW/Empiga-Logo-2.png",
+      features: ["WHO-GMP Certified", "Cost Effective", "Proven Efficacy"]
+    },
+    {
+      name: "Acmetel",
+      category: "Telmisartan Range",
+      description: "Trusted antihypertensive solution for consistent blood pressure control",
+      image: "https://i.ibb.co/p6tZk2KZ/acmetel.png",
+      features: ["International Standards", "Quality Assured", "Clinically Proven"]
+    },
+    {
+      name: "AcoSita",
+      category: "Sitagliptin Range",
+      description: "DPP-4 inhibitor supporting effective glycemic control in Type 2 Diabetes",
+      image: "https://i.ibb.co/1ykHPdv/AcoSita.png",
+      features: ["WHO-GMP Certified", "Enhanced Bioavailability", "Doctor Recommended"]
     }
   ];
 
@@ -33,7 +54,7 @@ const FlagshipProducts = () => {
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
             Our
-            <span className="gradient-text"> Flagship Products</span>
+            <span className="gradient-text"> Key Brands</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Discover our leading pharmaceutical solutions, each designed to deliver 
@@ -67,35 +88,7 @@ const FlagshipProducts = () => {
                 </div>
               </div>
 
-              {/* Product Content */}
-              <div className="p-6">
-                <h3 className="text-2xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">
-                  {product.name}
-                </h3>
-                
-                <p className="text-muted-foreground mb-4 leading-relaxed">
-                  {product.description}
-                </p>
-
-                {/* Features */}
-                <div className="space-y-2 mb-6">
-                  {product.features.map((feature, idx) => (
-                    <div key={idx} className="flex items-center space-x-2">
-                      <div className="w-2 h-2 bg-primary rounded-full"></div>
-                      <span className="text-sm text-muted-foreground">{feature}</span>
-                    </div>
-                  ))}
-                </div>
-
-                {/* CTA */}
-                <Button 
-                  variant="outline" 
-                  className="w-full group-hover:bg-primary group-hover:text-primary-foreground group-hover:border-primary transition-all duration-300"
-                >
-                  Learn More
-                  <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
-                </Button>
-              </div>
+              {/* Text and CTA removed per request */}
             </div>
           ))}
         </div>

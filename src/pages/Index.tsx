@@ -16,7 +16,7 @@ const Index = () => {
       <HeroSection />
       
       {/* Corporate Video Section */}
-      <section className="section-padding bg-muted/30">
+      <section id="corporate-story" className="section-padding bg-muted/30">
         <div className="container mx-auto text-center">
           <h2 className="text-4xl font-bold mb-6 text-foreground">
             Watch Our <span className="gradient-text">Corporate Story</span>
@@ -41,7 +41,9 @@ const Index = () => {
       </section>
       
       <AboutBrief />
-      <FlagshipProducts />
+      <div id="flagship-products">
+        <FlagshipProducts />
+      </div>
       <AwardsRecognition />
       <BlogSection />
       <ContactSection />

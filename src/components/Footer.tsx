@@ -174,7 +174,7 @@ const Footer = () => {
           <div className="flex flex-col lg:flex-row justify-between items-center space-y-6 lg:space-y-0">
             <div className="text-slate-400 text-center lg:text-left">
               <p className="mb-2">© 2024 Acmedix Pharma LLP. All rights reserved.</p>
-              <p className="text-sm">Trusted globally since 1983 • Making healthcare accessible for everyone</p>
+              <p className="text-sm">Trusted globally since 1985 • Making healthcare accessible for everyone</p>
             </div>
             
             <div className="flex flex-wrap justify-center gap-6">

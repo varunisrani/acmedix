@@ -67,7 +67,7 @@ const About = () => {
           <div className="max-w-4xl mx-auto text-center">
             <div className="inline-flex items-center bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full mb-8">
               <Globe className="h-5 w-5 mr-2" />
-              <span className="text-sm font-medium">Trusted Globally Since 1983</span>
+              <span className="text-sm font-medium">Trusted Globally Since 1985</span>
             </div>
             
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">

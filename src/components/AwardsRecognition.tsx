@@ -93,7 +93,7 @@ const AwardsRecognition = () => {
         </div>
 
         {/* Certifications Section */}
-        <div className="bg-gradient-to-br from-muted/50 to-background rounded-2xl p-8 md:p-12">
+        <div id="quality-certifications" className="bg-gradient-to-br from-muted/50 to-background rounded-2xl p-8 md:p-12">
           <div className="text-center mb-12">
             <h3 className="text-3xl font-bold text-foreground mb-4 flex items-center justify-center space-x-3">
               <Shield className="h-8 w-8 text-primary" />

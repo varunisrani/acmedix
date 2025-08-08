@@ -1,5 +1,6 @@
 import { Button } from '@/components/ui/button';
 import { Users, Target, Award, Building2 } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const AboutBrief = () => {
   const stats = [
@@ -17,7 +18,7 @@ const AboutBrief = () => {
           <div>
             <div className="mb-6">
               <h2 className="text-sm font-medium text-primary mb-2 uppercase tracking-wider">
-                About Us
+                Our Impact
               </h2>
               <h3 className="text-4xl md:text-5xl font-bold text-foreground leading-tight">
                 Committed to providing 
@@ -40,11 +41,11 @@ const AboutBrief = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button className="btn-primary">
-                Learn More About Us
+              <Button className="btn-primary" asChild>
+                <Link to="/about">Learn More About Us</Link>
               </Button>
-              <Button variant="outline" className="btn-secondary">
-                Our Certifications
+              <Button variant="outline" className="btn-secondary" asChild>
+                <a href="#quality-certifications">Quality Certifications</a>
               </Button>
             </div>
           </div>
@@ -70,20 +71,13 @@ const AboutBrief = () => {
               ))}
             </div>
 
-            {/* Mission Statement */}
-            <div className="mt-12 p-8 bg-gradient-to-br from-primary-light to-background rounded-xl border border-primary/10">
-              <div className="flex items-start space-x-4">
-                <div className="p-3 bg-primary/10 rounded-lg">
-                  <Target className="h-6 w-6 text-primary" />
-                </div>
-                <div>
-                  <h4 className="text-xl font-semibold text-foreground mb-3">Our Mission</h4>
-                  <p className="text-muted-foreground leading-relaxed">
-                    To provide high-quality, affordable medicines that improve lives and 
-                    make healthcare accessible to all communities worldwide.
-                  </p>
-                </div>
-              </div>
+            {/* Replaced mission statement with DMF Grade API image */}
+            <div className="mt-12 p-8 bg-gradient-to-br from-primary-light to-background rounded-xl border border-primary/10 flex items-center justify-center">
+              <img
+                src="https://i.ibb.co/1Y98nRQP/DMF-GRADE-API-LOGO-1.png"
+                alt="DMF Grade API"
+                className="h-24 md:h-32 object-contain max-w-full"
+              />
             </div>
           </div>
         </div>

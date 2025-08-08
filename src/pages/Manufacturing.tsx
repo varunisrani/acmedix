@@ -40,19 +40,19 @@ const Manufacturing = () => {
   const manufacturingUnits = [
     {
       image: "https://i.ibb.co/fdbh5J0z/Acme-1.webp",
-      title: "Acme 1 - Acme Lifetech LLP",
+      title: "Acme Unit 1",
       description: "World-class pharmaceutical manufacturing facility featuring cutting-edge technology, automated production lines, and stringent quality control systems. Specialized in high-volume production of tablets, capsules, and sterile injectables with WHO-GMP compliance.",
       website: "https://acmegrp.in/acme-lifetech-llp/"
     },
     {
       image: "https://i.ibb.co/JZ2q3xD/Acme-2.webp", 
-      title: "Acme 2 - F&D",
+      title: "Acme Unit 2",
       description: "Advanced formulation and development center dedicated to innovative pharmaceutical research and product development. Houses state-of-the-art analytical laboratories, pilot production units, and R&D facilities for next-generation therapeutic solutions.",
       website: "https://acmegrp.in/acme-fd/"
     },
     {
       image: "https://i.ibb.co/rRY0XN1j/Acme-3.webp",
-      title: "Acme 3 - Acme Dietcare Pvt. Ltd.",
+      title: "Acme Unit 3",
       description: "Specialized manufacturing facility focused on nutraceuticals, dietary supplements, and wellness products. Features dedicated production lines for health supplements, functional foods, and specialized therapeutic nutrition products with international quality standards.",
       website: "https://acmedix.vercel.app/"
     }
@@ -90,94 +90,31 @@ const Manufacturing = () => {
         </div>
       </section>
 
-      {/* Manufacturing Prowess Section */}
-      <section className="section-padding bg-gradient-to-br from-background via-muted/20 to-primary/5 relative overflow-hidden">
-        {/* Background decoration */}
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute top-20 right-20 w-64 h-64 bg-primary rounded-full blur-3xl"></div>
-          <div className="absolute bottom-20 left-20 w-80 h-80 bg-accent rounded-full blur-3xl"></div>
-        </div>
-        
-        <div className="container mx-auto relative z-10">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-              Manufacturing <span className="gradient-text">Prowess</span>
-            </h2>
-          </div>
-
-          <div className="grid lg:grid-cols-3 gap-8">
-            {/* Card 1 - Marketing Venture */}
-            <div className="card-pharmaceutical p-8 bg-gradient-to-br from-white to-primary/5 border border-primary/10 group hover:shadow-2xl transition-all duration-300">
-              <div className="flex items-center mb-6">
-                <div className="p-4 bg-primary rounded-full mr-4 group-hover:scale-110 transition-transform">
-                  <Heart className="h-8 w-8 text-primary-foreground" />
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold text-foreground">Chronic Care Focus</h3>
-                </div>
-              </div>
-              <p className="text-muted-foreground leading-relaxed">
-                Acmedix specializes in <span className="font-semibold text-foreground">Cardiac Care, Anti-Diabetes and Neuro care Therapy</span> with India's most economical brands available in the market.
-              </p>
-              <div className="mt-6 flex flex-wrap gap-2">
-                <span className="px-3 py-1 bg-primary/10 text-primary text-xs font-medium rounded-full">Cardiac Care</span>
-                <span className="px-3 py-1 bg-primary/10 text-primary text-xs font-medium rounded-full">Anti-Diabetes</span>
-                <span className="px-3 py-1 bg-primary/10 text-primary text-xs font-medium rounded-full">Neuro Care</span>
-              </div>
-            </div>
-
-            {/* Card 2 - Manufacturing Prowess */}
-            <div className="card-pharmaceutical p-8 bg-gradient-to-br from-primary to-primary-hover text-white group hover:shadow-2xl transition-all duration-300">
-              <div className="flex items-center mb-6">
-                <div className="p-4 bg-white/20 rounded-full mr-4 group-hover:scale-110 transition-transform">
-                  <Factory className="h-8 w-8 text-white" />
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold text-white">Elite Manufacturing</h3>
-                </div>
-              </div>
-              <p className="text-white/90 leading-relaxed mb-4">
-                Acmedix is one of <span className="font-bold text-white">8% pharmaceutical companies</span> with large scale self-manufacturing prowess.
-              </p>
-            </div>
-
-            {/* Card 3 - Global Reach */}
-            <div className="card-pharmaceutical p-8 bg-gradient-to-br from-white to-accent/5 border border-accent/10 group hover:shadow-2xl transition-all duration-300">
-              <div className="flex items-center mb-6">
-                <div className="p-4 bg-accent rounded-full mr-4 group-hover:scale-110 transition-transform">
-                  <Building2 className="h-8 w-8 text-accent-foreground" />
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold text-foreground">Global Excellence</h3>
-                </div>
-              </div>
-              <p className="text-muted-foreground leading-relaxed mb-4">
-                Manufacturing <span className="font-semibold text-foreground">top brands for leading pharmaceutical companies</span> across domestic and international markets.
-              </p>
-              <div className="grid grid-cols-2 gap-4">
-                <div className="text-center p-3 bg-accent/5 rounded-lg">
-                  <div className="text-2xl font-bold text-accent">5 lac+</div>
-                  <div className="text-xs text-muted-foreground">Happy patients</div>
-                </div>
-                <div className="text-center p-3 bg-accent/5 rounded-lg">
-                  <div className="text-2xl font-bold text-accent">250 cr</div>
-                  <div className="text-xs text-muted-foreground">saving by patients</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </section>
+      {/* Manufacturing Prowess Section removed as requested */}
 
       {/* Manufacturing Units Section */}
       <section className="section-padding bg-muted/30">
         <div className="container mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-6 text-foreground">
-              State-of-the-Art <span className="gradient-text">Manufacturing Units</span>
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <div className="mb-16">
+            <p className="text-primary font-bold text-2xl md:text-3xl mb-4 text-center">
+              Acmedix is one of 8% Pharmaceutical companies with large scale manufacturing prowess
+            </p>
+            <div className="flex items-center justify-center gap-12 md:gap-16 mb-2">
+              <img 
+                src="https://i.ibb.co/bgTzr9CS/WHO-GMP-APPROVED-LOGO.png" 
+                alt="WHO-GMP Approved"
+                className="h-24 md:h-32 object-contain drop-shadow translate-y-2 md:translate-y-3"
+              />
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground text-center">
+                State-of-the-Art <span className="gradient-text">Manufacturing Units</span>
+              </h2>
+              <img 
+                src="https://i.ibb.co/QvYk0Sdv/EU-GMP-IN-PROCESS-LOGO.png" 
+                alt="EU-GMP In Process"
+                className="h-24 md:h-32 object-contain drop-shadow translate-y-2 md:translate-y-3"
+              />
+            </div>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto text-center">
               Three world-class manufacturing facilities equipped with the latest technology
             </p>
           </div>

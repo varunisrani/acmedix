@@ -4,7 +4,7 @@ import facilityExteriorImage from '@/assets/facility-exterior.jpg';
 
 const AboutSection = () => {
   const milestones = [
-    { year: "1983", event: "Company Founded", description: "Started with a vision to make quality medicines affordable" },
+    { year: "1985", event: "Company Founded", description: "Started with a vision to make quality medicines affordable" },
     { year: "1995", event: "First Manufacturing Unit", description: "Established state-of-the-art production facility" },
     { year: "2005", event: "WHO-GMP Certification", description: "Achieved international quality standards" },
     { year: "2015", event: "Export Business Launch", description: "Expanded to international markets" },
@@ -43,7 +43,7 @@ const AboutSection = () => {
           <div>
             <h3 className="text-3xl font-bold mb-6 text-foreground">Our Story</h3>
             <p className="text-muted-foreground text-lg leading-relaxed mb-6">
-              Founded in 1983 with a simple yet profound mission: to make quality medicines 
+              Founded in 1985 with a simple yet profound mission: to make quality medicines 
               accessible to all. What started as a small pharmaceutical venture has grown 
               into a trusted name in the industry, serving millions of patients across 
               25+ countries.

@@ -70,36 +70,41 @@ const HeroSection = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
-            <Button size="lg" className="btn-primary text-lg px-8 py-4">
-              Explore Products
+            <Button size="lg" className="btn-primary text-lg px-8 py-4" asChild>
+              <a href="#flagship-products">Explore Products</a>
             </Button>
             <Button 
               size="lg" 
               variant="outline" 
               className="bg-white/10 border-white/30 text-white hover:bg-white hover:text-primary text-lg px-8 py-4"
+              asChild
             >
-              <Play className="mr-2 h-5 w-5" />
-              Watch Our Story
+              <a href="#corporate-story">
+                <Play className="mr-2 h-5 w-5 inline" />
+                Watch Our Story
+              </a>
             </Button>
           </div>
 
-          {/* Stats Counter */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
-            <div className="text-center">
-              <div className="counter-number">{counters.years}+</div>
-              <p className="text-white/80 font-medium">Years Legacy</p>
-            </div>
-            <div className="text-center">
-              <div className="counter-number">{counters.savings}%</div>
-              <p className="text-white/80 font-medium">Cost Savings</p>
-            </div>
-            <div className="text-center">
-              <div className="counter-number">{counters.units}</div>
-              <p className="text-white/80 font-medium">Manufacturing Units</p>
-            </div>
-            <div className="text-center">
-              <div className="counter-number">{counters.products}+</div>
-              <p className="text-white/80 font-medium">Products</p>
+          {/* Stats Counter with individual blurred cards */}
+          <div className="animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+              <div className="text-center bg-white/10 backdrop-blur-md rounded-xl p-4 md:p-6">
+                <div className="counter-number">{counters.years}+</div>
+                <p className="text-white/80 font-medium">Years Legacy</p>
+              </div>
+              <div className="text-center bg-white/10 backdrop-blur-md rounded-xl p-4 md:p-6">
+                <div className="counter-number">{counters.units}</div>
+                <p className="text-white/80 font-medium">Manufacturing Units</p>
+              </div>
+              <div className="text-center bg-white/10 backdrop-blur-md rounded-xl p-4 md:p-6">
+                <div className="counter-number">{counters.savings}%</div>
+                <p className="text-white/80 font-medium">Cost Savings</p>
+              </div>
+              <div className="text-center bg-white/10 backdrop-blur-md rounded-xl p-4 md:p-6">
+                <div className="counter-number">{counters.products}+</div>
+                <p className="text-white/80 font-medium">Products</p>
+              </div>
             </div>
           </div>
         </div>
