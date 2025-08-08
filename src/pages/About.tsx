@@ -43,10 +43,10 @@ const About = () => {
   ];
 
   const companyStats = [
-    { number: "15,000+", label: "doctors trust", icon: Award },
-    { number: "50,000+", label: "chemist network", icon: TrendingUp },
-    { number: "5 lac +", label: "Happy patients", icon: Users },
-    { number: "250 cr+", label: "saving by patients", icon: Zap }
+    { number: "15,000+", label: "Doctors Trust", icon: Award },
+    { number: "50,000+", label: "Chemist Network", icon: TrendingUp },
+    { number: "5 lac +", label: "Happy Patients", icon: Users },
+    { number: "250 cr+", label: "Saving By Patients", icon: Zap }
   ];
 
 

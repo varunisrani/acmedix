@@ -4,7 +4,7 @@ const ValueProposition = () => {
   const values = [
     {
       icon: DollarSign,
-      title: "250 cr saving by patients",
+      title: "250 cr Saving By Patients",
       description: "Exceptional cost savings without compromising on quality, making healthcare accessible to all",
       color: "text-success",
       bgColor: "bg-success/10"

@@ -4,10 +4,10 @@ import { Link } from 'react-router-dom';
 
 const AboutBrief = () => {
   const stats = [
-    { number: "15,000", label: "doctors trust", suffix: "+" },
-    { number: "50,000", label: "chemist network", suffix: "+" },
-    { number: "5", label: "Happy patients", suffix: " lac+" },
-    { number: "250", label: "saving by patients", suffix: " cr+" }
+    { number: "15,000", label: "Doctors Trust", suffix: "+" },
+    { number: "50,000", label: "Chemist Network", suffix: "+" },
+    { number: "5", label: "Happy Patients", suffix: " lac+" },
+    { number: "250", label: "Saving By Patients", suffix: " cr+" }
   ];
 
   return (
