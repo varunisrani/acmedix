@@ -41,6 +41,7 @@ const HeroSection = () => {
     return () => clearTimeout(timer);
   }, []);
 
+
   return (
     <section id="home" className="hero-section">
       {/* Background Image with Overlay */}
@@ -85,6 +86,8 @@ const HeroSection = () => {
               </a>
             </Button>
           </div>
+
+          {/* Logos carousel removed (moved to Corporate Story section) */}
 
           {/* Stats Counter: single red gradient container with white, smaller text */}
           <div className="animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
