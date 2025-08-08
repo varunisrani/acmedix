@@ -1,35 +1,25 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
 import { Pill, Download } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const OtherTherapy = () => {
-  const products = [
-    {
-      name: "ACMOXIA 60",
-      image: "https://i.ibb.co/cmBHxp7/ACMOXIA-60.png"
-    },
-    {
-      name: "ACMOXIA 90",
-      image: "https://i.ibb.co/SDKTPkVG/ACMOXIA-90.png"
-    },
-    {
-      name: "ACMOXIA MR",
-      image: "https://i.ibb.co/hRzfzZg4/ACMOXIA-MR.png"
-    },
-    {
-      name: "ACORISE D3",
-      image: "https://i.ibb.co/b5mKpx0m/ACORISE-D3.png"
-    },
-    {
-      name: "AFFOCAL CT",
-      image: "https://i.ibb.co/gbpw1sns/AFFOCAL-CT.png"
-    },
-    {
-      name: "AFFOCAL XT",
-      image: "https://i.ibb.co/qLSRZ5rG/AFFOCAL-XT.png"
-    }
+  const rows: Array<{ sr: number; name: string; composition: string; mrp: string; packing: string }> = [
+    { sr: 1, name: "ACMOXIA 60", composition: "Etoricoxib 60mg Tablet", mrp: "37.00", packing: "1 X 10'S" },
+    { sr: 2, name: "ACMOXIA 90", composition: "Etoricoxib 90mg Tablet", mrp: "59.00", packing: "1 X 10'S" },
+    { sr: 3, name: "ACMOXIA MR", composition: "Etoricoxib 60mg + Thiocolchicoside 4mg Tablet", mrp: "129.00", packing: "1 X 10'S" },
+    { sr: 4, name: "ACORISE D3", composition: "Cholecalciferol 60000 IU (Vitamin D3) Capsule", mrp: "44.00", packing: "1 X 4'S" },
+    { sr: 5, name: "AFFOCAL CT", composition: "Calcitriol I.P 0.25 mcg + Calcium Carbonate 500mg. Eq to elemental Calcium 200mg. + Zinc 7.5mg Tablet", mrp: "49.00", packing: "1 X 10'S" },
+    { sr: 6, name: "AFFOCAL XT", composition: "Calcium Carbonate IP 1250mg Eq. to Elemental Calcium 500mg +Vitamin D3 IP 2000IU +Mecobalamin IP (Methylcobalamin) 1500mcg + L-Methylfolate Calcium 1mg + Pyridoxal 5 Phosphate 20mg Tablet", mrp: "134.00", packing: "1 X 15'S" },
   ];
 
   return (
@@ -56,7 +46,7 @@ const OtherTherapy = () => {
           
           <div className="grid md:grid-cols-3 gap-6 mt-12">
             <div className="text-center">
-              <div className="text-3xl font-bold text-primary mb-2">{products.length}+</div>
+              <div className="text-3xl font-bold text-primary mb-2">{rows.length}+</div>
               <div className="text-gray-600">Product Variants</div>
             </div>
             <div className="text-center">
@@ -71,28 +61,32 @@ const OtherTherapy = () => {
         </div>
       </section>
 
-      {/* Products Grid */}
+      {/* Products Table */}
       <section className="section-padding">
         <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-6">
-            {products.map((product, index) => (
-              <div key={index} className="aspect-square bg-white rounded-lg border overflow-hidden hover:shadow-lg transition-shadow flex flex-col">
-                {/* Image Area - 60% */}
-                <div className="flex-[3] flex items-center justify-center p-2">
-                  <img 
-                    src={product.image} 
-                    alt={product.name}
-                    className="w-full h-full object-contain"
-                  />
-                </div>
-                {/* Text Area - 40% */}
-                <div className="flex-[2] flex items-center justify-center px-3 py-4 bg-gray-100 border-t border-gray-200">
-                  <h3 className="text-base font-bold text-center text-red-600 leading-tight uppercase">
-                    {product.name}
-                  </h3>
-                </div>
-              </div>
-            ))}
+          <div className="card-pharmaceutical p-4 md:p-6 overflow-auto max-h-[70vh] relative">
+            <Table>
+              <TableHeader className="sticky top-0 z-10 bg-background shadow-sm">
+                <TableRow>
+                  <TableHead className="w-20 text-base md:text-lg font-semibold uppercase">Sr No</TableHead>
+                  <TableHead className="text-base md:text-lg font-semibold uppercase">Product Name</TableHead>
+                  <TableHead className="text-base md:text-lg font-semibold uppercase">Composition</TableHead>
+                  <TableHead className="w-28 text-right text-base md:text-lg font-semibold uppercase">M.R.P</TableHead>
+                  <TableHead className="w-28 text-base md:text-lg font-semibold uppercase">Packing</TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody>
+                {rows.map((r) => (
+                  <TableRow key={r.sr}>
+                    <TableCell className="font-medium">{r.sr}</TableCell>
+                    <TableCell className="font-semibold text-foreground">{r.name}</TableCell>
+                    <TableCell className="text-muted-foreground">{r.composition}</TableCell>
+                    <TableCell className="text-right text-primary font-semibold">₹{r.mrp}</TableCell>
+                    <TableCell>{r.packing}</TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
           </div>
         </div>
       </section>

@@ -1,47 +1,28 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
 import { Shield, Download } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const NeuroCare = () => {
-  const products = [
-    {
-      name: "ACOGAB NT",
-      image: "https://i.ibb.co/hRMBCLgn/ACOGAB-NT.png"
-    },
-    {
-      name: "ACOLEV 500",
-      image: "https://i.ibb.co/8DYsq8JY/ACOLEV-500.png"
-    },
-    {
-      name: "ACONERV P",
-      image: "https://i.ibb.co/nN6BTHMh/ACONERV-P.png"
-    },
-    {
-      name: "ACONERV PLUS",
-      image: "https://i.ibb.co/hFLj5Wcs/ACONERV-PLUS.png"
-    },
-    {
-      name: "ACONERV SL",
-      image: "https://i.ibb.co/rGwLkMyV/ACONERV-SL.png"
-    },
-    {
-      name: "ACOPRAM PLUS",
-      image: "https://i.ibb.co/8nhsH9C2/ACOPRAM-PLUS.png"
-    },
-    {
-      name: "ACOPRAM",
-      image: "https://i.ibb.co/1tk4Wk9q/ACOPRAM.png"
-    },
-    {
-      name: "ACOPREG NT",
-      image: "https://i.ibb.co/35Mdqkmb/ACOPREG-NT.png"
-    },
-    {
-      name: "ACOVERT 16",
-      image: "https://i.ibb.co/RGHD9D2h/ACOVERT-16.png"
-    }
+  const rows: Array<{ sr: number; name: string; composition: string; mrp: string; packing: string }> = [
+    { sr: 1, name: "ACOGAB NT", composition: "Gabapentin 400 mg + Nortriptyline 10mg Tablet", mrp: "69.00", packing: "1 X 10'S" },
+    { sr: 2, name: "ACOLEV 500", composition: "Levetiracetam 500mg Tablet", mrp: "69.00", packing: "1 X 10'S" },
+    { sr: 3, name: "ACONERV P", composition: "Pregabalin 75 mg Sustained Released + Mecobalamin 1500 mcg. Tablet", mrp: "72.00", packing: "1 X 10'S" },
+    { sr: 4, name: "ACONERV PLUS", composition: "Methylcobalamin 1500mcg+Alpha Lipoic Acid 100mg+Pyridoxine 3mg + Folic Acid 1.5mg + Vitamin D3 1000 IU Tablet", mrp: "90.00", packing: "1 X 10'S" },
+    { sr: 5, name: "ACONERV SL", composition: "Methylcobalamin 1500 mcg Sublingual Tablet", mrp: "44.00", packing: "1 X 10'S" },
+    { sr: 6, name: "ACOPRAM PLUS", composition: "Escitalopram 10mg +Clonezapam 0.5mg Tablet", mrp: "49.00", packing: "1 X 10'S" },
+    { sr: 7, name: "ACOPRAM ", composition: "Escitalopram 10mg Tablet", mrp: "39.00", packing: "1 X 10'S" },
+    { sr: 8, name: "ACOPREG NT", composition: "Pregabalin 75 mg + Nortryptilin 10 mg Tablet", mrp: "59.00", packing: "1 X 10'S" },
+    { sr: 9, name: "ACOVERT 16", composition: "Betahistine 16 mg Tablet", mrp: "39.00", packing: "1 X 10'S" },
   ];
 
   return (
@@ -68,7 +49,7 @@ const NeuroCare = () => {
           
           <div className="grid md:grid-cols-3 gap-6 mt-12">
             <div className="text-center">
-              <div className="text-3xl font-bold text-primary mb-2">{products.length}+</div>
+              <div className="text-3xl font-bold text-primary mb-2">{rows.length}+</div>
               <div className="text-gray-600">Product Variants</div>
             </div>
             <div className="text-center">
@@ -83,28 +64,32 @@ const NeuroCare = () => {
         </div>
       </section>
 
-      {/* Products Grid */}
+      {/* Products Table */}
       <section className="section-padding">
         <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-6">
-            {products.map((product, index) => (
-              <div key={index} className="aspect-square bg-white rounded-lg border overflow-hidden hover:shadow-lg transition-shadow flex flex-col">
-                {/* Image Area - 60% */}
-                <div className="flex-[3] flex items-center justify-center p-2">
-                  <img 
-                    src={product.image} 
-                    alt={product.name}
-                    className="w-full h-full object-contain"
-                  />
-                </div>
-                {/* Text Area - 40% */}
-                <div className="flex-[2] flex items-center justify-center px-3 py-4 bg-gray-100 border-t border-gray-200">
-                  <h3 className="text-base font-bold text-center text-red-600 leading-tight uppercase">
-                    {product.name}
-                  </h3>
-                </div>
-              </div>
-            ))}
+          <div className="card-pharmaceutical p-4 md:p-6 overflow-auto max-h-[70vh] relative">
+            <Table>
+              <TableHeader className="sticky top-0 z-10 bg-background shadow-sm">
+                <TableRow>
+                  <TableHead className="w-20 text-base md:text-lg font-semibold uppercase">Sr No</TableHead>
+                  <TableHead className="text-base md:text-lg font-semibold uppercase">Product Name</TableHead>
+                  <TableHead className="text-base md:text-lg font-semibold uppercase">Composition</TableHead>
+                  <TableHead className="w-28 text-right text-base md:text-lg font-semibold uppercase">M.R.P</TableHead>
+                  <TableHead className="w-28 text-base md:text-lg font-semibold uppercase">Packing</TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody>
+                {rows.map((r) => (
+                  <TableRow key={r.sr}>
+                    <TableCell className="font-medium">{r.sr}</TableCell>
+                    <TableCell className="font-semibold text-foreground">{r.name}</TableCell>
+                    <TableCell className="text-muted-foreground">{r.composition}</TableCell>
+                    <TableCell className="text-right text-primary font-semibold">₹{r.mrp}</TableCell>
+                    <TableCell>{r.packing}</TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
           </div>
         </div>
       </section>

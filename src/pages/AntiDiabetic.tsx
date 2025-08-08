@@ -1,199 +1,66 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
 import { Heart, Download } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const AntiDiabetic = () => {
-  const products = [
-    {
-      name: "ACMEGLIM M1 FORTE",
-      image: "https://i.ibb.co/TBF7mBdd/ACMEGLIM-M1-FORTE.png"
-    },
-    {
-      name: "ACMEGLIM M1",
-      image: "https://i.ibb.co/xSf296K3/ACMEGLIM-M1.png"
-    },
-    {
-      name: "ACMEGLIM M2 FORTE",
-      image: "https://i.ibb.co/Q0hx6Tk/ACMEGLIM-M2-FORTE.png"
-    },
-    {
-      name: "ACMEGLIM M2",
-      image: "https://i.ibb.co/cSMNCFD9/ACMEGLIM-M2.png"
-    },
-    {
-      name: "ACMEGLIM MP 1",
-      image: "https://i.ibb.co/Vc2rZ0Jy/ACMEGLIM-MP-1.png"
-    },
-    {
-      name: "ACMEGLIM MP 2",
-      image: "https://i.ibb.co/DyLZ5x1/ACMEGLIM-MP-2.png"
-    },
-    {
-      name: "ACMEGLIM MV1",
-      image: "https://i.ibb.co/qLpZzLZ0/ACMEGLIM-MV1.png"
-    },
-    {
-      name: "ACMEGLIM MV2 0.3",
-      image: "https://i.ibb.co/pvKDy4BG/ACMEGLIM-MV2-0-3.png"
-    },
-    {
-      name: "ACMEGLIM MV2",
-      image: "https://i.ibb.co/whPYJGwp/ACMEGLIM-MV2.png"
-    },
-    {
-      name: "ACMEZID M",
-      image: "https://i.ibb.co/XZYM9v2p/ACMEZID-M.png"
-    },
-    {
-      name: "ACOSITA 50",
-      image: "https://i.ibb.co/vvKjTnbj/ACOSITA-50.png"
-    },
-    {
-      name: "ACOSITA 100",
-      image: "https://i.ibb.co/r29YDtrk/ACOSITA-100.png"
-    },
-    {
-      name: "ACOSITA M 500",
-      image: "https://i.ibb.co/xqMrDmYT/ACOSITA-M-500.png"
-    },
-    {
-      name: "ACOSITA M SR 100/500",
-      image: "https://i.ibb.co/zHFr9G6s/ACOSITA-M-SR-100-500.png"
-    },
-    {
-      name: "ACOSITA M SR 100/1000",
-      image: "https://i.ibb.co/rGFG4r3w/ACOSITA-M-SR-100-1000.png"
-    },
-    {
-      name: "ACOSITA MP 500",
-      image: "https://i.ibb.co/hk3RLKt/ACOSITA-MP-500.png"
-    },
-    {
-      name: "ACOSITA MP 1000",
-      image: "https://i.ibb.co/MD9pgQT1/ACOSITA-MP-1000.png"
-    },
-    {
-      name: "ACOVOG M 0.3",
-      image: "https://i.ibb.co/KcDNDrJm/ACOVOG-M-0-3.png"
-    },
-    {
-      name: "ACOVOG MD 0.2",
-      image: "https://i.ibb.co/TDg0zZDn/ACOVOG-MD-0-2.png"
-    },
-    {
-      name: "ACOVOG MD 0.3",
-      image: "https://i.ibb.co/1tgG819h/ACOVOG-MD-0-3.png"
-    },
-    {
-      name: "ACVILDA 50",
-      image: "https://i.ibb.co/NnsfC7zF/ACVILDA-50.png"
-    },
-    {
-      name: "ACVILDA M 500",
-      image: "https://i.ibb.co/ksvbJHyN/ACVILDA-M-500.png"
-    },
-    {
-      name: "ACVILDA M 1000",
-      image: "https://i.ibb.co/7dFBrsBV/ACVILDA-M-1000.png"
-    },
-    {
-      name: "ACVILDA M SR 500",
-      image: "https://i.ibb.co/dw9tyGdJ/ACVILDA-M-SR-500.png"
-    },
-    {
-      name: "DAXIGA 5",
-      image: "https://i.ibb.co/XZyXgWFB/DAXIGA-5.png"
-    },
-    {
-      name: "DAXIGA 10",
-      image: "https://i.ibb.co/ym41Z8DG/DAXIGA-10.png"
-    },
-    {
-      name: "DAXIGA GM 1",
-      image: "https://i.ibb.co/RGYTTYfH/DAXIGA-GM-1.png"
-    },
-    {
-      name: "DAXIGA GM 2",
-      image: "https://i.ibb.co/jkd1CFzs/DAXIGA-GM-2.png"
-    },
-    {
-      name: "DAXIGA L",
-      image: "https://i.ibb.co/sJwsfJ49/DAXIGA-L.png"
-    },
-    {
-      name: "DAXIGA M 500",
-      image: "https://i.ibb.co/j97wQN1y/DAXIGA-M-500.png"
-    },
-    {
-      name: "DAXIGA M 1000",
-      image: "https://i.ibb.co/4gssd95B/DAXIGA-M-1000.png"
-    },
-    {
-      name: "DAXIGA S 10/100",
-      image: "https://i.ibb.co/4xgBt0P/DAXIGA-S-10-100.png"
-    },
-    {
-      name: "DAXIGA SM 500",
-      image: "https://i.ibb.co/jvvCb6jd/DAXIGA-SM-500.png"
-    },
-    {
-      name: "DAXIGA SM 1000",
-      image: "https://i.ibb.co/xKpGsyGn/DAXIGA-SM-1000.png"
-    },
-    {
-      name: "DAXIGA T",
-      image: "https://i.ibb.co/DPzssv9L/DAXIGA-T.png"
-    },
-    {
-      name: "DAXIGA V",
-      image: "https://i.ibb.co/sx2BZGV/DAXIGA-V.png"
-    },
-    {
-      name: "DAXIGA VM 500",
-      image: "https://i.ibb.co/65PqZZ4/DAXIGA-VM-500.png"
-    },
-    {
-      name: "DAXIGA VM 1000",
-      image: "https://i.ibb.co/4RbGk1FD/DAXIGA-VM-1000.png"
-    },
-    {
-      name: "EMPIGA 10",
-      image: "https://i.ibb.co/Zpz0XyhG/EMPIGA-10.png"
-    },
-    {
-      name: "EMPIGA 25",
-      image: "https://i.ibb.co/BVdtDRGm/EMPIGA-25.png"
-    },
-    {
-      name: "EMPIGA L 10",
-      image: "https://i.ibb.co/Mkqh5HxW/EMPIGA-L-10.png"
-    },
-    {
-      name: "EMPIGA L 25",
-      image: "https://i.ibb.co/rRqGZmw9/EMPIGA-L-25.png"
-    },
-    {
-      name: "EMPIGA M 12.5/500",
-      image: "https://i.ibb.co/60TvG00S/EMPIGA-M-12-5-500.png"
-    },
-    {
-      name: "EMPIGA M 12.5/1000",
-      image: "https://i.ibb.co/v47GhK8y/EMPIGA-M-12-5-1000.png"
-    },
-    {
-      name: "EMPIGA S 25",
-      image: "https://i.ibb.co/b5kx5HFc/EMPIGA-S-25.png"
-    },
-    {
-      name: "TENEDIX M 500",
-      image: "https://i.ibb.co/BHRrXB1M/TENEDIX-M-500.png"
-    },
-    {
-      name: "TENEDIX",
-      image: "https://i.ibb.co/67JZ0bKS/TENEDIX.png"
-    }
+  const rows: Array<{ sr: number; name: string; composition: string; mrp: string; packing: string }> = [
+    { sr: 1, name: "ACMEGLIM M1 FORTE", composition: "Glimepiride 1 mg + Metformin 1000mg Tablet", mrp: "34.00", packing: "1 X 10'S" },
+    { sr: 2, name: "ACMEGLIM M1", composition: "Metformin 500 mg SR + Glimepiride 1 mg Tablet", mrp: "27.50", packing: "1 X 10'S" },
+    { sr: 3, name: "ACMEGLIM M2 FORTE", composition: "Glimepiride 2 mg + Metformin 1000mg Tablet", mrp: "39.00", packing: "1 X 10'S" },
+    { sr: 4, name: "ACMEGLIM M2", composition: "Metformin 500 mg SR + Glimepiride 2 mg Tablet", mrp: "29.50", packing: "1 X 10'S" },
+    { sr: 5, name: "ACMEGLIM MP 1", composition: "Glimepiride 1mg + Pioglitazone 15mg + Metformin 500mg Tablet", mrp: "38.00", packing: "1 X 10'S" },
+    { sr: 6, name: "ACMEGLIM MP 2", composition: "Glimepiride 2mg+Pioglitazone 15mg+Metformin 500mg Tablet", mrp: "42.00", packing: "1 X 10'S" },
+    { sr: 7, name: "ACMEGLIM MV1", composition: "Metformin 500 mg SR + Glimepiride 1 mg +Voglibose 0.1 mg Tablet", mrp: "42.00", packing: "1 X 10'S" },
+    { sr: 8, name: "ACMEGLIM MV2/0.3", composition: "Glimepiride 2mg + Metformin 500mg + Voglibose 0.3mg Tablet", mrp: "64.50", packing: "1 X 10'S" },
+    { sr: 9, name: "ACMEGLIM MV2", composition: "Metformin 500 mg SR + Glimepiride 2 mg Tab +Voglibose 0.2 mg Tablet", mrp: "47.00", packing: "1 X 10'S" },
+    { sr: 10, name: "ACMEZID M", composition: "Gliclazide 80mg + Metformin 500mg Tablet", mrp: "42.00", packing: "1 X 10'S" },
+    { sr: 11, name: "ACOSITA 50", composition: "Sitagliptin 50mg Tablet", mrp: "39.00", packing: "1 X 10'S" },
+    { sr: 12, name: "ACOSITA 100", composition: "Sitagliptin 100mg Tablet", mrp: "69.00", packing: "1 X 10'S" },
+    { sr: 13, name: "ACOSITA M 500", composition: "Sitagliptin 50mg + Metformin 500mg Tablet", mrp: "89.00", packing: "1 X 10'S" },
+    { sr: 14, name: "ACOSITA M SR 100/500", composition: "Sitagliptin 100mg + Metformin 500mg SR Tablet", mrp: "85.00", packing: "1 X 10'S" },
+    { sr: 15, name: "ACOSITA M SR 100/1000", composition: "Sitagliptin 100mg + Metformin 1000mg SR Tablet", mrp: "89.00", packing: "1 X 10'S" },
+    { sr: 16, name: "ACOSITA MP 500", composition: "Sitagliptin 100mg + Pioglitazone 15mg + Metformin 500mg Tablet", mrp: "99.00", packing: "1 X 10'S" },
+    { sr: 17, name: "ACOSITA MP 1000", composition: "Sitagliptin 100mg + Pioglitazone 15mg + Metformin 1000mg Tablet", mrp: "109.00", packing: "1 X 10'S" },
+    { sr: 18, name: "ACOVOG M 0.3", composition: "Voglibose 0.3mg + Metformin 500mg(SR) Tablet", mrp: "49.00", packing: "1 X 10'S" },
+    { sr: 19, name: "ACOVOG MD 0.2", composition: "Voglibose  0.2 mg (MD) Tablet", mrp: "20.00", packing: "1 X 10'S" },
+    { sr: 20, name: "ACOVOG MD 0.3", composition: "Voglibose  0.3 mg (MD) Tablet", mrp: "25.00", packing: "1 X 10'S" },
+    { sr: 21, name: "ACVILDA 50", composition: "Vildagliptin 50mg Tablet", mrp: "39.00", packing: "1 X 10'S" },
+    { sr: 22, name: "ACVILDA M 500", composition: "Vildagliptin 50mg + Metformin 500mg Tablet", mrp: "46.00", packing: "1 X 10'S" },
+    { sr: 23, name: "ACVILDA M 1000", composition: "Vildagliptin 50mg + Metformin 1000mg Tablet", mrp: "51.00", packing: "1 X 10'S" },
+    { sr: 24, name: "ACVILDA M SR 500", composition: "Vildagliptin 50mg + Metformin HCL(SR)500mg Tablet", mrp: "51.00", packing: "1 X 10'S" },
+    { sr: 25, name: "DAXIGA 5", composition: "Dapagliflozin 5 mg Tablet", mrp: "29.00", packing: "1 X 10'S" },
+    { sr: 26, name: "DAXIGA 10", composition: "Dapagliflozin 10mg Tablet", mrp: "48.00", packing: "1 X 10'S" },
+    { sr: 27, name: "DAXIGA GM 1", composition: "Dapagliflozin 10mg + Glimepiride 1mg + Metformin 500mg Tablet", mrp: "59.00", packing: "1 X 10'S" },
+    { sr: 28, name: "DAXIGA GM 2", composition: "Dapagliflozin 10mg + Glimepiride 2mg + Metformin 500mg Tablet", mrp: "65.00", packing: "1 X 10'S" },
+    { sr: 29, name: "DAXIGA L", composition: "Dapagliflozin 10mg + Linagliptin 5mg Tablet", mrp: "79.00", packing: "1 X 10'S" },
+    { sr: 30, name: "DAXIGA M 500", composition: "Dapagliflozin 10mg + Metformin 500mg Tablet", mrp: "63.00", packing: "1 X 10'S" },
+    { sr: 31, name: "DAXIGA M 1000", composition: "Dapagliflozin 10mg + Metformin 1000mg Tablet", mrp: "79.00", packing: "1 X 10'S" },
+    { sr: 32, name: "DAXIGA S 10/100", composition: "Sitagliptin 100mg + Dapagliflozin 10mg Tablet", mrp: "99.00", packing: "1 X 10'S" },
+    { sr: 33, name: "DAXIGA SM 500", composition: "Sitagliptin 100mg + Dapagliflozin 10mg  + Metformin 500mg Tablet", mrp: "119.00", packing: "1 X 10'S" },
+    { sr: 34, name: "DAXIGA SM 1000", composition: "Sitagliptin 100mg + Dapagliflozin 10mg + Metformin 1000mg Tablet", mrp: "129.00", packing: "1 X 10'S" },
+    { sr: 35, name: "DAXIGA T", composition: "Dapagliflozin 10mg + Teneligliptin 20mg Tablet", mrp: "79.00", packing: "1 X 10'S" },
+    { sr: 36, name: "DAXIGA V", composition: "Dapagliflozin 10mg + Vildagliptin 100mg SR Tablet", mrp: "89.00", packing: "1 X 10'S" },
+    { sr: 37, name: "DAXIGA VM 500", composition: "Dapagliflozin 10mg + Vildagliptin 100mg + Metformin 500mg Tablet", mrp: "95.00", packing: "1 X 10'S" },
+    { sr: 38, name: "DAXIGA VM 1000", composition: "Dapagliflozin 10mg + Vildagliptin 100mg + Metformin 1000mg Tablet", mrp: "99.00", packing: "1 X 10'S" },
+    { sr: 39, name: "EMPIGA 10", composition: "Empagliflozin 10mg Tablet", mrp: "39.00", packing: "1 X 10'S" },
+    { sr: 40, name: "EMPIGA 25", composition: "Empagliflozin 25mg Tablet", mrp: "59.00", packing: "1 X 10'S" },
+    { sr: 41, name: "EMPIGA L 10", composition: "Empagliflozin 10mg + Linagliptin 5mg Tablet", mrp: "49.00", packing: "1 X 10'S" },
+    { sr: 42, name: "EMPIGA L 25", composition: "Empagliflozin 25mg + Linagliptin 5mg Tablet", mrp: "89.00", packing: "1 X 10'S" },
+    { sr: 43, name: "EMPIGA M 12.5/500", composition: "Empagliflozin 12.5mg + Metformin 500mg Tablet", mrp: "49.00", packing: "1 X 10'S" },
+    { sr: 44, name: "EMPIGA M 12.5/1000", composition: "Empagliflozin 25mg + Metformin 1000mg Tablet", mrp: "79.00", packing: "1 X 10'S" },
+    { sr: 45, name: "EMPIGA S 25", composition: "Empagliflozin 25mg + Sitagliptin 100mg Tablet", mrp: "99.00", packing: "1 X 10'S" },
+    { sr: 46, name: "TENEDIX M 500", composition: "Teneligliptin 20mg + Metformin 500mg SR Tablet", mrp: "81.00", packing: "1 X 15'S" },
+    { sr: 47, name: "TENEDIX 20", composition: "Teneligliptin 20mg Tablet", mrp: "49.00", packing: "1 X 10'S" },
   ];
 
   return (
@@ -220,7 +87,7 @@ const AntiDiabetic = () => {
           
           <div className="grid md:grid-cols-3 gap-6 mt-12">
             <div className="text-center">
-              <div className="text-3xl font-bold text-primary mb-2">{products.length}+</div>
+              <div className="text-3xl font-bold text-primary mb-2">{rows.length}+</div>
               <div className="text-gray-600">Product Variants</div>
             </div>
             <div className="text-center">
@@ -235,28 +102,32 @@ const AntiDiabetic = () => {
         </div>
       </section>
 
-      {/* Products Grid */}
+      {/* Products Table */}
       <section className="section-padding">
         <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-6">
-            {products.map((product, index) => (
-              <div key={index} className="aspect-square bg-white rounded-lg border overflow-hidden hover:shadow-lg transition-shadow flex flex-col">
-                {/* Image Area - 60% */}
-                <div className="flex-[3] flex items-center justify-center p-2">
-                  <img 
-                    src={product.image} 
-                    alt={product.name}
-                    className="w-full h-full object-contain"
-                  />
-                </div>
-                {/* Text Area - 40% */}
-                <div className="flex-[2] flex items-center justify-center px-3 py-4 bg-gray-100 border-t border-gray-200">
-                  <h3 className="text-base font-bold text-center text-red-600 leading-tight uppercase">
-                    {product.name}
-                  </h3>
-                </div>
-              </div>
-            ))}
+          <div className="card-pharmaceutical p-4 md:p-6 overflow-auto max-h-[70vh] relative">
+            <Table>
+              <TableHeader className="sticky top-0 z-10 bg-background shadow-sm">
+                <TableRow>
+                  <TableHead className="w-20 text-base md:text-lg font-semibold uppercase">Sr No</TableHead>
+                  <TableHead className="text-base md:text-lg font-semibold uppercase">Product Name</TableHead>
+                  <TableHead className="text-base md:text-lg font-semibold uppercase">Composition</TableHead>
+                  <TableHead className="w-28 text-right text-base md:text-lg font-semibold uppercase">M.R.P</TableHead>
+                  <TableHead className="w-28 text-base md:text-lg font-semibold uppercase">Packing</TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody>
+                {rows.map((r) => (
+                  <TableRow key={r.sr}>
+                    <TableCell className="font-medium">{r.sr}</TableCell>
+                    <TableCell className="font-semibold text-foreground">{r.name}</TableCell>
+                    <TableCell className="text-muted-foreground">{r.composition}</TableCell>
+                    <TableCell className="text-right text-primary font-semibold">₹{r.mrp}</TableCell>
+                    <TableCell>{r.packing}</TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
           </div>
         </div>
       </section>

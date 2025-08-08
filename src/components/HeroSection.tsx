@@ -86,24 +86,26 @@ const HeroSection = () => {
             </Button>
           </div>
 
-          {/* Stats Counter with individual blurred cards */}
+          {/* Stats Counter: single red gradient container with white, smaller text */}
           <div className="animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
-              <div className="text-center bg-white/10 backdrop-blur-md rounded-xl p-4 md:p-6">
-                <div className="counter-number">{counters.years}+</div>
-                <p className="text-white/80 font-medium">Years Legacy</p>
-              </div>
-              <div className="text-center bg-white/10 backdrop-blur-md rounded-xl p-4 md:p-6">
-                <div className="counter-number">{counters.units}</div>
-                <p className="text-white/80 font-medium">Manufacturing Units</p>
-              </div>
-              <div className="text-center bg-white/10 backdrop-blur-md rounded-xl p-4 md:p-6">
-                <div className="counter-number">{counters.savings}%</div>
-                <p className="text-white/80 font-medium">Cost Savings</p>
-              </div>
-              <div className="text-center bg-white/10 backdrop-blur-md rounded-xl p-4 md:p-6">
-                <div className="counter-number">{counters.products}+</div>
-                <p className="text-white/80 font-medium">Products</p>
+            <div className="rounded-2xl bg-gradient-to-br from-primary to-primary-hover text-white shadow-lg p-4 md:p-6">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+                <div className="text-center">
+                  <div className="text-3xl md:text-5xl font-extrabold">{counters.years}+</div>
+                  <p className="text-sm md:text-base text-white/90 font-medium">Years Legacy</p>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl md:text-5xl font-extrabold">{counters.units}</div>
+                  <p className="text-sm md:text-base text-white/90 font-medium">Manufacturing Units</p>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl md:text-5xl font-extrabold">{counters.savings}%</div>
+                  <p className="text-sm md:text-base text-white/90 font-medium">Cost Savings</p>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl md:text-5xl font-extrabold">{counters.products}+</div>
+                  <p className="text-sm md:text-base text-white/90 font-medium">Products</p>
+                </div>
               </div>
             </div>
           </div>

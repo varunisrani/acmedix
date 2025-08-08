@@ -1,135 +1,54 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
 import { Beaker, Download } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const CardiacCare = () => {
-  const products = [
-    {
-      name: "ACBISO 5",
-      image: "https://i.ibb.co/gbYJ5YCv/ACBISO-5.png"
-    },
-    {
-      name: "ACMEROSE 10",
-      image: "https://i.ibb.co/MkjVhLj9/ACMEROSE-10.png"
-    },
-    {
-      name: "ACMEROSE 20",
-      image: "https://i.ibb.co/nqYsJzNh/ACMEROSE-20.png"
-    },
-    {
-      name: "ACMEROSE A 10",
-      image: "https://i.ibb.co/ks2bNfNk/ACMEROSE-A-10.png"
-    },
-    {
-      name: "ACMEROSE CV 10",
-      image: "https://i.ibb.co/rNhF09C/ACMEROSE-CV-10.png"
-    },
-    {
-      name: "ACMEROSE EZ",
-      image: "https://i.ibb.co/PzTJ6h1B/ACMEROSE-EZ.png"
-    },
-    {
-      name: "ACMEROSE F",
-      image: "https://i.ibb.co/Pv25B9Fv/ACMEROSE-F.png"
-    },
-    {
-      name: "ACMEROSE GOLD 10",
-      image: "https://i.ibb.co/LX5PRNb3/ACMEROSE-GOLD-10.png"
-    },
-    {
-      name: "ACMEROSE GOLD 20",
-      image: "https://i.ibb.co/tPFRTbMd/ACMEROSE-GOLD-20.png"
-    },
-    {
-      name: "ACMETEL 40",
-      image: "https://i.ibb.co/qMgSNQYR/ACMETEL-40.png"
-    },
-    {
-      name: "ACMETEL AM",
-      image: "https://i.ibb.co/Z1fCnYSm/ACMETEL-AM.png"
-    },
-    {
-      name: "ACMETEL AMH",
-      image: "https://i.ibb.co/NgbGHGQw/ACMETEL-AMH.png"
-    },
-    {
-      name: "ACMETEL BS",
-      image: "https://i.ibb.co/0yMX4QjD/ACMETEL-BS.png"
-    },
-    {
-      name: "ACMETEL CH",
-      image: "https://i.ibb.co/RG53LXf0/ACMETEL-CH.png"
-    },
-    {
-      name: "ACMETEL H",
-      image: "https://i.ibb.co/q3byz6wn/ACMETEL-H.png"
-    },
-    {
-      name: "ACMETEL LN",
-      image: "https://i.ibb.co/qz07Gcz/ACMETEL-LN.png"
-    },
-    {
-      name: "ACMETEL MT 25",
-      image: "https://i.ibb.co/zTrKvrCb/ACMETEL-MT-25.png"
-    },
-    {
-      name: "ACMETEL MT 50",
-      image: "https://i.ibb.co/fGztvSCY/ACMETEL-MT-50.png"
-    },
-    {
-      name: "ACMETO AM",
-      image: "https://i.ibb.co/PsWbyszL/ACMETO-AM.png"
-    },
-    {
-      name: "ACMETO XL 25",
-      image: "https://i.ibb.co/35hCcwGc/ACMETO-XL-25.png"
-    },
-    {
-      name: "ACMETO XL 50",
-      image: "https://i.ibb.co/xSYvn27h/ACMETO-XL-50.png"
-    },
-    {
-      name: "ACOTIDE 10",
-      image: "https://i.ibb.co/rRfn9QDh/ACOTIDE-10.png"
-    },
-    {
-      name: "AFFOLMY 20",
-      image: "https://i.ibb.co/jkVBdWzj/AFFOLMY-20.png"
-    },
-    {
-      name: "AFFOLMY 40",
-      image: "https://i.ibb.co/3mrWQXww/AFFOLMY-40.png"
-    },
-    {
-      name: "CILAFIRST 10",
-      image: "https://i.ibb.co/yFTfhPS5/CILAFIRST-10.png"
-    },
-    {
-      name: "CILAFIRST 20",
-      image: "https://i.ibb.co/jZ9gQkC0/CILAFIRST-20.png"
-    },
-    {
-      name: "CILAFIRST M 10/25",
-      image: "https://i.ibb.co/5gVR69DX/CILAFIRST-M-10-25.png"
-    },
-    {
-      name: "CILAFIRST M 10/50",
-      image: "https://i.ibb.co/7d5vvVZ1/CILAFIRST-M-10-50.png"
-    },
-    {
-      name: "IVASAFE 5",
-      image: "https://i.ibb.co/kVsdv5cR/IVASAFE-5.png"
-    },
-    {
-      name: "SACUSAFE 50",
-      image: "https://i.ibb.co/8nYsLLg6/SACUSAFE-50.png"
-    },
-    {
-      name: "SACUSAFE 100",
-      image: "https://i.ibb.co/W48P7TcX/SACUSAFE-100.png"
-    }
+  const rows: Array<{ sr: number; name: string; composition: string; mrp: string; packing: string }> = [
+    { sr: 1, name: "ACBISO 5", composition: "Bisoprolol 5 mg  Tablet", mrp: "29.00", packing: "1 X 10'S" },
+    { sr: 2, name: "ACMEROSE 10", composition: "Rosuvastatin 10mg Tablet", mrp: "30.00", packing: "1 X 10'S" },
+    { sr: 3, name: "ACMEROSE 20", composition: "Rosuvastatin 20mg Tablet", mrp: "52.00", packing: "1 X 10'S" },
+    { sr: 4, name: "ACMEROSE A 10", composition: "Rosuvastatin 10mg + Aspirin 75mg Tablet", mrp: "49.00", packing: "1 X 10'S" },
+    { sr: 5, name: "ACMEROSE CV 10", composition: "Rosuvastatin 10mg + Clopidogrel 75mg Tablet", mrp: "53.00", packing: "1 X 10'S" },
+    { sr: 6, name: "ACMEROSE EZ", composition: "Rosuvastatin 10mg + Ezetimibe 10mg Tablet", mrp: "89.00", packing: "1 X 10'S" },
+    { sr: 7, name: "ACMEROSE F", composition: "Rosuvastatin 10mg + Fenofibrate 160mg Tablet", mrp: "52.00", packing: "1 X 10'S" },
+    { sr: 8, name: "ACMEROSE GOLD 10", composition: "Rosuvastatin 10mg + Aspirin 75mg + Clopidogrel 75mg Capsule", mrp: "72.00", packing: "1 X 10'S" },
+    { sr: 9, name: "ACMEROSE GOLD 20", composition: "Rosuvastatin 20mg + Aspirin 75mg + Clopidogrel 75mg Capsule", mrp: "82.00", packing: "1 X 10'S" },
+    { sr: 10, name: "ACMETEL 40", composition: "Telmisartan 40 mg Tablet", mrp: "26.00", packing: "1 X 10'S" },
+    { sr: 11, name: "ACMETEL AM", composition: "Telmisartan 40 mg + Amlodipine 5 mg  Tablet", mrp: "36.00", packing: "1 X 10'S" },
+    { sr: 12, name: "ACMETEL AMH", composition: "Telmisartan 40 mg + Hydrochlorthiazide 12.5mg + Amlodipine 5mg  Tablet", mrp: "40.00", packing: "1 X 10'S" },
+    { sr: 13, name: "ACMETEL BS", composition: "Telmisartan 40mg + Bisoprolol 5mg  Tablet", mrp: "49.00", packing: "1 X 10'S" },
+    { sr: 14, name: "ACMETEL CH", composition: "Telmisartan 40mg + Chlorthalidone 12.5mg  Tablet", mrp: "35.00", packing: "1 X 10'S" },
+    { sr: 15, name: "ACMETEL H", composition: "Telmisartan 40 mg + Hydrochlorthiazide 12.5 mg  Tablet", mrp: "31.00", packing: "1 X 10'S" },
+    { sr: 16, name: "ACMETEL LN", composition: "Telmisartan 40mg + Cilnidipine 10mg  Tablet", mrp: "44.00", packing: "1 X 10'S" },
+    { sr: 17, name: "ACMETEL LNB 25", composition: "Telmisartan 40mg + Cilnidipine 10mg + Metoprolol 25mg Tablet", mrp: "59.00", packing: "1 X 10'S" },
+    { sr: 18, name: "ACMETEL LNB 50", composition: "Telmisartan 40mg + Cilnidipine 10mg + Metoprolol 50mg Tablet", mrp: "69.00", packing: "1 X 10'S" },
+    { sr: 19, name: "ACMETEL TRIO 6.25", composition: "Telmisartan 40mg + Cilnidipine 10mg + Chlorthalidone 6.25mg Tablet", mrp: "49.00", packing: "1 X 10'S" },
+    { sr: 20, name: "ACMETEL TRIO 12.5", composition: "Telmisartan 40mg + Cilnidipine 10mg + Chlorthalidone 12.5mg Tablet", mrp: "59.00", packing: "1 X 10'S" },
+    { sr: 21, name: "ACMETEL MT 25", composition: "Telmisartan 40mg + Metoprolol 25mg Tablet", mrp: "35.00", packing: "1 X 10'S" },
+    { sr: 22, name: "ACMETEL MT 50", composition: "Telmisartan 40mg + Metoprolol 50mg Tablet", mrp: "44.00", packing: "1 X 10'S" },
+    { sr: 23, name: "ACMETO AM", composition: "Metoprolol 50 mg  + Amlodipine 5mg Tablet", mrp: "35.00", packing: "1 X 10'S" },
+    { sr: 24, name: "ACMETO XL 25", composition: "Metoprolol 25 mg Tablet", mrp: "14.00", packing: "1 X 10'S" },
+    { sr: 25, name: "ACMETO XL 50", composition: "Metoprolol 50 mg Tablet", mrp: "18.00", packing: "1 X 10'S" },
+    { sr: 26, name: "ACOTIDE 10", composition: "Torsemide 10 mg Tablet", mrp: "29.00", packing: "1 X 10'S" },
+    { sr: 27, name: "AFFOLMY 20", composition: "Olmesartan 20 mg Tablet", mrp: "29.00", packing: "1 X 10'S" },
+    { sr: 28, name: "AFFOLMY 40", composition: "Olmesartan 40 mg Tablet", mrp: "49.00", packing: "1 X 10'S" },
+    { sr: 29, name: "CILAFIRST 10", composition: "Cilnidipine 10mg Tablet", mrp: "28.00", packing: "1 X 10'S" },
+    { sr: 30, name: "CILAFIRST 20", composition: "Cilnidipine 20mg Tablet", mrp: "45.00", packing: "1 X 10'S" },
+    { sr: 31, name: "CILAFIRST M 10/25", composition: "Cilnidipine 10mg + Metoprolol 25mg Tablet", mrp: "37.00", packing: "1 X 10'S" },
+    { sr: 32, name: "CILAFIRST M 10/50", composition: "Cilnidipine 10 mg +  Metoprolol 50 mg Tablet", mrp: "39.00", packing: "1 X 10'S" },
+    { sr: 33, name: "IVASAFE 5", composition: "Ivabradine 5mg Tablet", mrp: "85.00", packing: "1 X 10'S" },
+    { sr: 34, name: "SACUSAFE 50", composition: "Sacubitril 24 mg + Valsartan 26 mg Tablet", mrp: "125.00", packing: "1 X 14'S" },
+    { sr: 35, name: "SACUSAFE 100", composition: "Sacubitril 49mg+Valsartan 51mg Tablet", mrp: "223.00", packing: "1 X 14'S" },
   ];
 
   return (
@@ -156,7 +75,7 @@ const CardiacCare = () => {
           
           <div className="grid md:grid-cols-3 gap-6 mt-12">
             <div className="text-center">
-              <div className="text-3xl font-bold text-primary mb-2">{products.length}+</div>
+              <div className="text-3xl font-bold text-primary mb-2">{rows.length}+</div>
               <div className="text-gray-600">Product Variants</div>
             </div>
             <div className="text-center">
@@ -171,28 +90,32 @@ const CardiacCare = () => {
         </div>
       </section>
 
-      {/* Products Grid */}
+      {/* Products Table */}
       <section className="section-padding">
         <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-6">
-            {products.map((product, index) => (
-              <div key={index} className="aspect-square bg-white rounded-lg border overflow-hidden hover:shadow-lg transition-shadow flex flex-col">
-                {/* Image Area - 60% */}
-                <div className="flex-[3] flex items-center justify-center p-2">
-                  <img 
-                    src={product.image} 
-                    alt={product.name}
-                    className="w-full h-full object-contain"
-                  />
-                </div>
-                {/* Text Area - 40% */}
-                <div className="flex-[2] flex items-center justify-center px-3 py-4 bg-gray-100 border-t border-gray-200">
-                  <h3 className="text-base font-bold text-center text-red-600 leading-tight uppercase">
-                    {product.name}
-                  </h3>
-                </div>
-              </div>
-            ))}
+          <div className="card-pharmaceutical p-4 md:p-6 overflow-auto max-h-[70vh] relative">
+            <Table>
+              <TableHeader className="sticky top-0 z-10 bg-background shadow-sm">
+                <TableRow>
+                  <TableHead className="w-20 text-base md:text-lg font-semibold uppercase">Sr No</TableHead>
+                  <TableHead className="text-base md:text-lg font-semibold uppercase">Product Name</TableHead>
+                  <TableHead className="text-base md:text-lg font-semibold uppercase">Composition</TableHead>
+                  <TableHead className="w-28 text-right text-base md:text-lg font-semibold uppercase">M.R.P</TableHead>
+                  <TableHead className="w-28 text-base md:text-lg font-semibold uppercase">Packing</TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody>
+                {rows.map((r) => (
+                  <TableRow key={r.sr}>
+                    <TableCell className="font-medium">{r.sr}</TableCell>
+                    <TableCell className="font-semibold text-foreground">{r.name}</TableCell>
+                    <TableCell className="text-muted-foreground">{r.composition}</TableCell>
+                    <TableCell className="text-right text-primary font-semibold">₹{r.mrp}</TableCell>
+                    <TableCell>{r.packing}</TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
           </div>
         </div>
       </section>
