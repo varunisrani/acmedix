@@ -104,25 +104,7 @@ const Navigation = () => {
 
   return (
     <>
-      {/* Top Contact Bar */}
-      <div className="bg-primary text-primary-foreground py-2 text-sm">
-        <div className="container mx-auto px-4 flex justify-between items-center">
-          <div className="flex items-center space-x-4">
-            <div className="flex items-center space-x-2">
-              <Phone className="h-4 w-4" />
-              <span>+91 7948907524</span>
-            </div>
-            <div className="flex items-center space-x-2">
-              <Mail className="h-4 w-4" />
-              <span>info@acmedixpharma.com</span>
-            </div>
-          </div>
-          <div className="hidden md:flex items-center space-x-2">
-            <MapPin className="h-4 w-4" />
-            <span>Ahmedabad, India</span>
-          </div>
-        </div>
-      </div>
+      {/* Top Contact Bar removed as requested */}
 
       {/* Main Navigation */}
       <nav className={`sticky top-0 z-50 transition-all duration-300 ${
