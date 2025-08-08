@@ -91,7 +91,7 @@ const HeroSection = () => {
 
           {/* Stats Counter: single red gradient container with white, smaller text */}
           <div className="animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
-            <div className="rounded-2xl bg-gradient-to-br from-primary to-primary-hover text-white shadow-lg p-4 md:p-6">
+            <div className="rounded-2xl bg-gradient-to-br from-primary/60 to-primary-hover/60 text-white shadow-lg p-4 md:p-6">
               <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
                 <div className="text-center">
                   <div className="text-3xl md:text-5xl font-extrabold">{counters.years}+</div>
