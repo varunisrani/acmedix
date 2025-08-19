@@ -18,11 +18,11 @@ const Footer = () => {
       title: "Products",
       icon: Heart,
       links: [
-        { name: "Anti-Diabetic", href: "#anti-diabetic" },
-        { name: "Cardiac Care", href: "#cardiac-care" },
-        { name: "Neuro Care", href: "#neuro-care" },
-        { name: "Other Therapy", href: "#other-therapy" },
-        { name: "Product Catalog", href: "#catalog" }
+        { name: "Anti-Diabetic", href: "/products/anti-diabetic" },
+        { name: "Cardiac Care", href: "/products/cardiac-care" },
+        { name: "Neuro Care", href: "/products/neuro-care" },
+        { name: "Other Therapy", href: "/products/other-therapy" },
+        { name: "Product Catalog", href: "/products/anti-diabetic" }
       ]
     },
     {
@@ -30,10 +30,10 @@ const Footer = () => {
       icon: Users,
       links: [
         { name: "Contact Us", href: "/contact" },
-        { name: "Customer Support", href: "#support" },
-        { name: "Technical Support", href: "#tech-support" },
-        { name: "Feedback", href: "#feedback" },
-        { name: "Partnership", href: "#partnership" }
+        { name: "Customer Support", href: "/contact" },
+        { name: "Technical Support", href: "/contact" },
+        { name: "Feedback", href: "/contact" },
+        { name: "Partnership", href: "/contact" }
       ]
     }
   ];
@@ -178,18 +178,26 @@ const Footer = () => {
             </div>
             
             <div className="flex flex-wrap justify-center gap-6">
-              <a href="#privacy" className="text-sm text-slate-400 hover:text-primary transition-colors">
+              <Link to="/contact" className="text-sm text-slate-400 hover:text-primary transition-colors">
                 Privacy Policy
-              </a>
-              <a href="#terms" className="text-sm text-slate-400 hover:text-primary transition-colors">
+              </Link>
+              <Link to="/contact" className="text-sm text-slate-400 hover:text-primary transition-colors">
                 Terms of Service
-              </a>
-              <a href="#disclaimer" className="text-sm text-slate-400 hover:text-primary transition-colors">
+              </Link>
+              <Link to="/contact" className="text-sm text-slate-400 hover:text-primary transition-colors">
                 Medical Disclaimer
-              </a>
-              <a href="#sitemap" className="text-sm text-slate-400 hover:text-primary transition-colors">
+              </Link>
+              <Link to="/" className="text-sm text-slate-400 hover:text-primary transition-colors">
                 Sitemap
-              </a>
+              </Link>
+              {/* Admin Access */}
+              <Link 
+                to="/admin/login" 
+                className="text-sm text-slate-400 hover:text-primary transition-colors"
+                title="Admin Access"
+              >
+                Admin
+              </Link>
             </div>
           </div>
 

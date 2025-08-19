@@ -13,6 +13,12 @@ import Careers from "./pages/Careers";
 import Blog from "./pages/Blog";
 import BlogDetail from "./pages/BlogDetail";
 import Contact from "./pages/Contact";
+import AdminLogin from "./pages/AdminLogin";
+import AdminDashboard from "./pages/AdminDashboard";
+import AdminBlogManagement from "./pages/AdminBlogManagement";
+import AdminBlogForm from "./pages/AdminBlogForm";
+import AdminCareerManagement from "./pages/AdminCareerManagement";
+import AdminCareerForm from "./pages/AdminCareerForm";
 import AntiDiabetic from "./pages/AntiDiabetic";
 import CardiacCare from "./pages/CardiacCare";
 import NeuroCare from "./pages/NeuroCare";
@@ -41,8 +47,19 @@ const App = () => (
           <Route path="/export" element={<Export />} />
           <Route path="/careers" element={<Careers />} />
           <Route path="/blog" element={<Blog />} />
-          <Route path="/blog/:id" element={<BlogDetail />} />
+          <Route path="/blog/:slug" element={<BlogDetail />} />
           <Route path="/contact" element={<Contact />} />
+          
+          {/* Admin Routes */}
+          <Route path="/admin/login" element={<AdminLogin />} />
+          <Route path="/admin/dashboard" element={<AdminDashboard />} />
+          <Route path="/admin/blog" element={<AdminBlogManagement />} />
+          <Route path="/admin/blog/create" element={<AdminBlogForm />} />
+          <Route path="/admin/blog/edit/:id" element={<AdminBlogForm />} />
+          <Route path="/admin/career" element={<AdminCareerManagement />} />
+          <Route path="/admin/career/create" element={<AdminCareerForm />} />
+          <Route path="/admin/career/edit/:id" element={<AdminCareerForm />} />
+          
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

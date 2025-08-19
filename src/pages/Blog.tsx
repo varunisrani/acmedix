@@ -1,61 +1,83 @@
+import React, { useState, useEffect } from 'react';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import { Calendar, Clock, User, ArrowRight, Heart, Beaker, Shield, TrendingUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
+import { fetchBlogPosts, fetchBlogCategories, subscribeToNewsletter, BlogPost, BlogCategory } from '@/lib/blogService';
+
+// Icon mapping for categories
+const iconMap: { [key: string]: any } = {
+  'Heart': Heart,
+  'Beaker': Beaker,
+  'Shield': Shield,
+  'TrendingUp': TrendingUp
+};
 
 const Blog = () => {
-  const blogPosts = [
-    {
-      id: 1,
-      title: "Revolutionizing Diabetes Care: Latest Advances in Anti-Diabetic Formulations",
-      excerpt: "Discover how innovative drug delivery systems are transforming diabetes management with enhanced bioavailability and patient compliance.",
-      content: "Diabetes affects millions globally, and the pharmaceutical industry continues to innovate in developing more effective treatments. At Acmedix, our research focuses on creating advanced anti-diabetic formulations that offer superior bioavailability and improved patient outcomes. Our latest developments in sustained-release technologies have shown promising results in clinical trials, offering patients better glucose control with fewer daily doses. This breakthrough represents a significant step forward in making diabetes management more convenient and effective for patients worldwide.",
-      category: "Anti-Diabetic",
-      date: "December 15, 2024",
-      readTime: "5 min read",
-      author: "Dr. Priya Sharma",
-      image: "https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=800&h=400&fit=crop",
-      featured: true,
-      icon: Heart,
-      color: "bg-red-500"
-    },
-    {
-      id: 2,
-      title: "The Future of Cardiac Care: Novel Drug Delivery Systems for Heart Health",
-      excerpt: "Exploring breakthrough technologies in cardiovascular medicine that promise better therapeutic outcomes and reduced side effects.",
-      content: "Cardiovascular diseases remain a leading cause of mortality worldwide. Our R&D team has been working tirelessly to develop novel drug delivery systems that can precisely target cardiac tissues while minimizing systemic side effects. Through our innovative liposomal delivery platforms and nanotechnology applications, we've achieved remarkable improvements in drug efficacy. These advances not only enhance therapeutic outcomes but also significantly reduce the dosing frequency, improving patient compliance and quality of life. Our commitment to cardiac care excellence continues to drive innovation in this critical therapeutic area.",
-      category: "Cardiac Care",
-      date: "December 10, 2024",
-      readTime: "4 min read",
-      author: "Dr. Rajesh Kumar",
-      image: "https://images.unsplash.com/photo-1584362917165-526a968579e8?w=800&h=400&fit=crop",
-      featured: false,
-      icon: Beaker,
-      color: "bg-blue-500"
-    },
-    {
-      id: 3,
-      title: "Neurotherapy Breakthroughs: Advancing Treatment for Neurological Disorders",
-      excerpt: "How cutting-edge research in neurological treatments is opening new possibilities for patients with complex neurological conditions.",
-      content: "Neurological disorders present unique challenges in drug development due to the blood-brain barrier and complex pathophysiology. Our specialized neurotherapy research division has made significant strides in developing innovative formulations that can effectively cross the blood-brain barrier and deliver therapeutic agents directly to neural tissues. Through our advanced targeting systems and sustained-release technologies, we're able to provide more consistent therapeutic levels while reducing the frequency of administration. This research represents hope for millions of patients suffering from neurological conditions, offering improved symptom management and enhanced quality of life.",
-      category: "Neurotherapy",
-      date: "December 5, 2024",
-      readTime: "6 min read",
-      author: "Dr. Anil Mehta",
-      image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800&h=400&fit=crop",
-      featured: false,
-      icon: Shield,
-      color: "bg-green-500"
+  const [blogPosts, setBlogPosts] = useState<BlogPost[]>([]);
+  const [categories, setCategories] = useState<BlogCategory[]>([]);
+  const [selectedCategory, setSelectedCategory] = useState<string>('all');
+  const [loading, setLoading] = useState(true);
+  const [newsletterEmail, setNewsletterEmail] = useState('');
+  const [newsletterStatus, setNewsletterStatus] = useState<'idle' | 'success' | 'error'>('idle');
+
+  useEffect(() => {
+    loadBlogData();
+  }, []);
+
+  const loadBlogData = async () => {
+    setLoading(true);
+    try {
+      const [posts, cats] = await Promise.all([
+        fetchBlogPosts(),
+        fetchBlogCategories()
+      ]);
+      
+      setBlogPosts(posts);
+      
+      // Add "All Posts" category
+      const allCategory: BlogCategory = {
+        id: 0,
+        name: 'All Posts',
+        slug: 'all',
+        description: 'All blog posts',
+        color: 'bg-primary',
+        icon: 'TrendingUp',
+        post_count: posts.length
+      };
+      
+      setCategories([allCategory, ...cats]);
+    } catch (error) {
+      console.error('Error loading blog data:', error);
+    } finally {
+      setLoading(false);
     }
-  ];
+  };
 
-  const categories = [
-    { name: "All Posts", count: 3, active: true }
-  ];
+  const handleNewsletterSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!newsletterEmail) return;
 
-  const featuredPost = blogPosts.find(post => post.featured);
-  const regularPosts = blogPosts.filter(post => !post.featured);
+    const result = await subscribeToNewsletter(newsletterEmail);
+    
+    if (result.success) {
+      setNewsletterStatus('success');
+      setNewsletterEmail('');
+      setTimeout(() => setNewsletterStatus('idle'), 3000);
+    } else {
+      setNewsletterStatus('error');
+      setTimeout(() => setNewsletterStatus('idle'), 3000);
+    }
+  };
+
+  // Filter posts based on selected category
+  const filteredPosts = selectedCategory === 'all' 
+    ? blogPosts 
+    : blogPosts.filter(post => post.category_slug === selectedCategory);
+
+  const featuredPost = filteredPosts.find(post => post.featured);
+  const regularPosts = filteredPosts.filter(post => !post.featured);
 
   return (
     <div className="min-h-screen">
@@ -79,11 +101,12 @@ const Blog = () => {
           <div className="flex flex-wrap justify-center gap-4">
             {categories.map((category) => (
               <Button
-                key={category.name}
-                variant={category.active ? "default" : "outline"}
-                className={`${category.active ? 'btn-primary' : 'hover:bg-primary/10'} transition-colors`}
+                key={category.slug}
+                variant={selectedCategory === category.slug ? "default" : "outline"}
+                className={`${selectedCategory === category.slug ? 'btn-primary' : 'hover:bg-primary/10'} transition-colors`}
+                onClick={() => setSelectedCategory(category.slug)}
               >
-                {category.name} ({category.count})
+                {category.name} ({category.post_count})
               </Button>
             ))}
           </div>
@@ -106,13 +129,13 @@ const Blog = () => {
                 {/* Image */}
                 <div className="relative h-64 lg:h-full overflow-hidden">
                   <img 
-                    src={featuredPost.image} 
+                    src={featuredPost.featured_image} 
                     alt={featuredPost.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
                   <div className="absolute top-4 left-4">
-                    <span className={`px-3 py-1 ${featuredPost.color} text-white text-sm font-semibold rounded-full`}>
+                    <span className={`px-3 py-1 ${featuredPost.category_color} text-white text-sm font-semibold rounded-full`}>
                       Featured
                     </span>
                   </div>
@@ -121,10 +144,12 @@ const Blog = () => {
                 {/* Content */}
                 <div className="p-8 lg:p-12">
                   <div className="flex items-center space-x-4 mb-4">
-                    <div className={`p-2 ${featuredPost.color} rounded-lg`}>
-                      <featuredPost.icon className="h-5 w-5 text-white" />
+                    <div className={`p-2 ${featuredPost.category_color} rounded-lg`}>
+                      {iconMap[featuredPost.category_icon] && 
+                        React.createElement(iconMap[featuredPost.category_icon], { className: "h-5 w-5 text-white" })
+                      }
                     </div>
-                    <span className="text-primary font-semibold">{featuredPost.category}</span>
+                    <span className="text-primary font-semibold">{featuredPost.category_name}</span>
                   </div>
 
                   <h3 className="text-2xl lg:text-3xl font-bold text-foreground mb-4 group-hover:text-primary transition-colors">
@@ -139,20 +164,24 @@ const Blog = () => {
                     <div className="flex items-center space-x-4 text-sm text-muted-foreground">
                       <div className="flex items-center space-x-2">
                         <User className="h-4 w-4" />
-                        <span>{featuredPost.author}</span>
+                        <span>{featuredPost.author_name}</span>
                       </div>
                       <div className="flex items-center space-x-2">
                         <Calendar className="h-4 w-4" />
-                        <span>{featuredPost.date}</span>
+                        <span>{new Date(featuredPost.published_at).toLocaleDateString('en-US', { 
+                          year: 'numeric', 
+                          month: 'long', 
+                          day: 'numeric' 
+                        })}</span>
                       </div>
                       <div className="flex items-center space-x-2">
                         <Clock className="h-4 w-4" />
-                        <span>{featuredPost.readTime}</span>
+                        <span>{featuredPost.read_time} min read</span>
                       </div>
                     </div>
                   </div>
 
-                  <Link to={`/blog/${featuredPost.id}`}>
+                  <Link to={`/blog/${featuredPost.slug}`}>
                     <Button className="btn-primary group">
                       Read Full Blog
                       <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
@@ -175,68 +204,98 @@ const Blog = () => {
             <p className="text-xl text-muted-foreground">Explore our pharmaceutical expertise and industry insights</p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
-            {regularPosts.map((post, index) => (
-              <Link to={`/blog/${post.id}`} key={post.id}>
-                <div 
-                  className="card-pharmaceutical overflow-hidden group hover:shadow-2xl transition-all duration-300 cursor-pointer"
-                  style={{ 
-                    animation: `fade-in-up 0.8s ease-out ${index * 0.2}s both`
-                  }}
-                >
-                {/* Image */}
-                <div className="relative h-48 overflow-hidden">
-                  <img 
-                    src={post.image} 
-                    alt={post.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                  <div className="absolute top-4 left-4">
-                    <span className={`px-3 py-1 ${post.color} text-white text-xs font-semibold rounded-full`}>
-                      {post.category}
-                    </span>
+          {loading ? (
+            <div className="grid md:grid-cols-2 gap-8">
+              {[1, 2, 3, 4].map((i) => (
+                <div key={i} className="card-pharmaceutical overflow-hidden animate-pulse">
+                  <div className="h-48 bg-gray-300"></div>
+                  <div className="p-6">
+                    <div className="h-4 bg-gray-300 rounded mb-4"></div>
+                    <div className="h-6 bg-gray-300 rounded mb-3"></div>
+                    <div className="h-4 bg-gray-300 rounded"></div>
                   </div>
                 </div>
-
-                {/* Content */}
-                <div className="p-6">
-                  <div className="flex items-center space-x-3 mb-3">
-                    <div className={`p-2 ${post.color} rounded-lg`}>
-                      <post.icon className="h-4 w-4 text-white" />
-                    </div>
-                    <span className="text-primary font-medium text-sm">{post.category}</span>
-                  </div>
-
-                  <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors line-clamp-2">
-                    {post.title}
-                  </h3>
-                  
-                  <p className="text-muted-foreground text-sm leading-relaxed mb-4 line-clamp-3">
-                    {post.excerpt}
-                  </p>
-
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center space-x-3 text-xs text-muted-foreground">
-                      <div className="flex items-center space-x-1">
-                        <User className="h-3 w-3" />
-                        <span>{post.author}</span>
-                      </div>
-                      <div className="flex items-center space-x-1">
-                        <Clock className="h-3 w-3" />
-                        <span>{post.readTime}</span>
+              ))}
+            </div>
+          ) : regularPosts.length > 0 ? (
+            <div className="grid md:grid-cols-2 gap-8">
+              {regularPosts.map((post, index) => (
+                <Link to={`/blog/${post.slug}`} key={post.id}>
+                  <div 
+                    className="card-pharmaceutical overflow-hidden group hover:shadow-2xl transition-all duration-300 cursor-pointer"
+                    style={{ 
+                      animation: `fade-in-up 0.8s ease-out ${index * 0.2}s both`
+                    }}
+                  >
+                    {/* Image */}
+                    <div className="relative h-48 overflow-hidden">
+                      <img 
+                        src={post.featured_image} 
+                        alt={post.title}
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                      <div className="absolute top-4 left-4">
+                        <span className={`px-3 py-1 ${post.category_color} text-white text-xs font-semibold rounded-full`}>
+                          {post.category_name}
+                        </span>
                       </div>
                     </div>
-                    <Button size="sm" variant="ghost" className="text-primary hover:text-primary-hover">
-                      Read Blog
-                      <ArrowRight className="ml-1 h-3 w-3" />
-                    </Button>
+
+                    {/* Content */}
+                    <div className="p-6">
+                      <div className="flex items-center space-x-3 mb-3">
+                        <div className={`p-2 ${post.category_color} rounded-lg`}>
+                          {iconMap[post.category_icon] && 
+                            React.createElement(iconMap[post.category_icon], { className: "h-4 w-4 text-white" })
+                          }
+                        </div>
+                        <span className="text-primary font-medium text-sm">{post.category_name}</span>
+                      </div>
+
+                      <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors line-clamp-2">
+                        {post.title}
+                      </h3>
+                      
+                      <p className="text-muted-foreground text-sm leading-relaxed mb-4 line-clamp-3">
+                        {post.excerpt}
+                      </p>
+
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center space-x-3 text-xs text-muted-foreground">
+                          <div className="flex items-center space-x-1">
+                            <User className="h-3 w-3" />
+                            <span>{post.author_name}</span>
+                          </div>
+                          <div className="flex items-center space-x-1">
+                            <Clock className="h-3 w-3" />
+                            <span>{post.read_time} min read</span>
+                          </div>
+                        </div>
+                        <Button size="sm" variant="ghost" className="text-primary hover:text-primary-hover">
+                          Read More
+                          <ArrowRight className="ml-1 h-3 w-3" />
+                        </Button>
+                      </div>
+                    </div>
                   </div>
-                </div>
-                </div>
+                </Link>
+              ))}
+            </div>
+          ) : (
+            <div className="text-center py-12">
+              <Beaker className="h-16 w-16 text-muted-foreground mx-auto mb-4" />
+              <h3 className="text-2xl font-bold text-foreground mb-2">No Blog Posts Yet</h3>
+              <p className="text-muted-foreground mb-6">
+                We're working on publishing our latest pharmaceutical research and insights.
+              </p>
+              <Link to="/rnd">
+                <Button className="btn-primary">
+                  Explore Our R&D
+                </Button>
               </Link>
-            ))}
-          </div>
+            </div>
+          )}
         </div>
       </section>
 
@@ -251,16 +310,29 @@ const Blog = () => {
             <p className="text-xl text-white/90 mb-8">
               Subscribe to our newsletter for the latest pharmaceutical research, industry trends, and healthcare innovations.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+            <form onSubmit={handleNewsletterSubmit} className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
               <input 
                 type="email" 
+                value={newsletterEmail}
+                onChange={(e) => setNewsletterEmail(e.target.value)}
                 placeholder="Enter your email address"
+                required
                 className="flex-1 px-4 py-3 rounded-lg text-foreground focus:outline-none focus:ring-2 focus:ring-white"
               />
-              <Button className="bg-white text-primary hover:bg-white/90 px-8 py-3">
-                Subscribe
+              <Button 
+                type="submit"
+                className="bg-white text-primary hover:bg-white/90 px-8 py-3"
+                disabled={newsletterStatus === 'success'}
+              >
+                {newsletterStatus === 'success' ? '✓ Subscribed!' : 'Subscribe'}
               </Button>
-            </div>
+            </form>
+            
+            {newsletterStatus === 'error' && (
+              <p className="text-red-200 mt-4 text-center">
+                Error subscribing. Please try again.
+              </p>
+            )}
           </div>
         </div>
       </section>

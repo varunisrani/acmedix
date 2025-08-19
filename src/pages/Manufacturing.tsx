@@ -96,9 +96,43 @@ const Manufacturing = () => {
       <section className="section-padding bg-muted/30">
         <div className="container mx-auto">
           <div className="mb-16">
-            <p className="text-primary font-bold text-2xl md:text-3xl mb-4 text-center">
-              Acmedix is one of 8% Pharmaceutical companies with large scale manufacturing prowess
-            </p>
+            {/* Special Title Section */}
+            <div className="max-w-5xl mx-auto mb-12 relative">
+              <div className="bg-gradient-to-r from-primary/10 via-primary/5 to-primary/10 rounded-2xl p-8 md:p-10 relative overflow-hidden">
+                {/* Background decoration */}
+                <div className="absolute inset-0 opacity-10">
+                  <div className="absolute -top-20 -right-20 w-64 h-64 bg-primary rounded-full blur-3xl"></div>
+                  <div className="absolute -bottom-20 -left-20 w-64 h-64 bg-primary rounded-full blur-3xl"></div>
+                </div>
+                
+                {/* Content */}
+                <div className="relative z-10 text-center">
+                  <div className="inline-block mb-4">
+                    <span className="bg-primary text-white text-sm font-bold px-4 py-2 rounded-full">EXCLUSIVE ACHIEVEMENT</span>
+                  </div>
+                  <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 leading-tight">
+                    Acmedix is among the 
+                    <span className="block mt-2">
+                      <span className="text-6xl md:text-7xl font-extrabold gradient-text">TOP 8%</span>
+                    </span>
+                  </h3>
+                  <p className="text-xl md:text-2xl text-muted-foreground font-semibold">
+                    of Pharmaceutical Companies Worldwide with
+                  </p>
+                  <p className="text-2xl md:text-3xl font-bold text-primary mt-2">
+                    Large Scale Manufacturing Prowess
+                  </p>
+                  
+                  {/* Decorative line elements */}
+                  <div className="flex items-center justify-center gap-4 mt-6">
+                    <div className="h-1 w-20 bg-gradient-to-r from-transparent to-primary rounded-full"></div>
+                    <div className="h-2 w-2 bg-primary rounded-full"></div>
+                    <div className="h-1 w-20 bg-gradient-to-l from-transparent to-primary rounded-full"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
             <div className="flex items-center justify-center gap-12 md:gap-16 mb-2">
               <img 
                 src="https://i.ibb.co/bgTzr9CS/WHO-GMP-APPROVED-LOGO.png" 

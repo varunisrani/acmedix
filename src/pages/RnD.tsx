@@ -145,11 +145,9 @@ const RnD = () => {
                 </div>
                 
                 {/* Stats card */}
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="card-pharmaceutical p-4 text-center bg-gradient-to-br from-accent/10 to-accent/5">
-                    <div className="text-2xl font-bold text-accent mb-1">15+</div>
-                    <div className="text-xs text-muted-foreground">Active Projects</div>
-                  </div>
+                <div className="card-pharmaceutical p-6 text-center bg-gradient-to-br from-accent/10 to-accent/5">
+                  <div className="text-3xl font-bold text-accent mb-2">15+</div>
+                  <div className="text-sm text-muted-foreground">Active Projects</div>
                 </div>
               </div>
             </div>

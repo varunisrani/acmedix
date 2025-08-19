@@ -28,10 +28,7 @@ const AwardsRecognition = () => {
   const certifications = [
     { name: "WHO-GMP", description: "World Health Organization Good Manufacturing Practice" },
     { name: "ISO 9001:2015", description: "Quality Management System Certification" },
-    { name: "ISO 14001:2015", description: "Environmental Management System" },
-    { name: "USFDA Approved", description: "United States Food and Drug Administration" },
-    { name: "OHSAS 18001", description: "Occupational Health and Safety Assessment" },
-    { name: "CE Marking", description: "European Conformity Certification" }
+    { name: "ISO 14001:2015", description: "Environmental Management System" }
   ];
 
   return (
