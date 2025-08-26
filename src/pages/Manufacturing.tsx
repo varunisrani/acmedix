@@ -133,24 +133,49 @@ const Manufacturing = () => {
               </div>
             </div>
             
-            <div className="flex items-center justify-center gap-12 md:gap-16 mb-2">
-              <img 
-                src="https://i.ibb.co/bgTzr9CS/WHO-GMP-APPROVED-LOGO.png" 
-                alt="WHO-GMP Approved"
-                className="h-24 md:h-32 object-contain drop-shadow translate-y-2 md:translate-y-3"
-              />
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground text-center">
-                State-of-the-Art <span className="gradient-text">Manufacturing Units</span>
+            {/* Mobile Layout */}
+            <div className="block lg:hidden text-center">
+              <div className="flex items-center justify-center gap-4 mb-4">
+                <img 
+                  src="https://i.ibb.co/bgTzr9CS/WHO-GMP-APPROVED-LOGO.png" 
+                  alt="WHO-GMP Approved"
+                  className="h-16 sm:h-20 object-contain drop-shadow"
+                />
+                <img 
+                  src="https://i.ibb.co/QvYk0Sdv/EU-GMP-IN-PROCESS-LOGO.png" 
+                  alt="EU-GMP In Process"
+                  className="h-16 sm:h-20 object-contain drop-shadow"
+                />
+              </div>
+              <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-2">
+                State-of-the-Art <span className="gradient-text block sm:inline">Manufacturing Units</span>
               </h2>
-              <img 
-                src="https://i.ibb.co/QvYk0Sdv/EU-GMP-IN-PROCESS-LOGO.png" 
-                alt="EU-GMP In Process"
-                className="h-24 md:h-32 object-contain drop-shadow translate-y-2 md:translate-y-3"
-              />
+              <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto px-4">
+                Three world-class manufacturing facilities equipped with the latest technology
+              </p>
             </div>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto text-center">
-              Three world-class manufacturing facilities equipped with the latest technology
-            </p>
+
+            {/* Desktop Layout */}
+            <div className="hidden lg:block">
+              <div className="flex items-center justify-center gap-12 md:gap-16 mb-2">
+                <img 
+                  src="https://i.ibb.co/bgTzr9CS/WHO-GMP-APPROVED-LOGO.png" 
+                  alt="WHO-GMP Approved"
+                  className="h-24 md:h-32 object-contain drop-shadow translate-y-2 md:translate-y-3"
+                />
+                <h2 className="text-3xl md:text-4xl font-bold text-foreground text-center">
+                  State-of-the-Art <span className="gradient-text">Manufacturing Units</span>
+                </h2>
+                <img 
+                  src="https://i.ibb.co/QvYk0Sdv/EU-GMP-IN-PROCESS-LOGO.png" 
+                  alt="EU-GMP In Process"
+                  className="h-24 md:h-32 object-contain drop-shadow translate-y-2 md:translate-y-3"
+                />
+              </div>
+              <p className="text-xl text-muted-foreground max-w-3xl mx-auto text-center">
+                Three world-class manufacturing facilities equipped with the latest technology
+              </p>
+            </div>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8 mb-16">
@@ -164,7 +189,7 @@ const Manufacturing = () => {
                   animation: `fade-in-up 0.8s ease-out ${index * 0.2}s both`
                 }}
               >
-                <div className="relative h-48 overflow-hidden">
+                <div className="relative h-40 sm:h-48 overflow-hidden">
                   <img 
                     src={unit.image} 
                     alt={unit.title}

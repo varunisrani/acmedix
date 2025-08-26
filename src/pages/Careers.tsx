@@ -694,8 +694,8 @@ const Careers = () => {
               
               <h3 className="text-xl font-bold mb-4 text-foreground">Call Us</h3>
               <p className="text-muted-foreground mb-4">Speak directly with our HR representatives</p>
-              <a href="tel:+91-XXX-XXX-XXXX" className="text-primary font-medium hover:underline">
-                +91-XXX-XXX-XXXX
+              <a href="tel:+917948907524" className="text-primary font-medium hover:underline">
+                +91 7948907524
               </a>
             </div>
           </div>

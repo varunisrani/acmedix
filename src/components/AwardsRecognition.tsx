@@ -150,11 +150,11 @@ const AwardsRecognition = () => {
             </div>
             
             <div className="card-pharmaceutical overflow-hidden group">
-              <div className="h-60 bg-white overflow-hidden">
+              <div className="h-48 md:h-60 bg-white overflow-hidden">
                 <img 
                   src="https://i.ibb.co/Jjdg9N33/Acme-Life-Tech-LLP.png" 
                   alt="Acme Life Tech LLP"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  className="w-full h-full object-contain md:object-cover group-hover:scale-105 transition-transform duration-300"
                 />
               </div>
             </div>
